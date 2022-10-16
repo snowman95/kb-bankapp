@@ -11,10 +11,19 @@
   },
   "workspaces": {
     "packages": [
+      "apps/*",
       "packages/*"
+    ],
+    "nohoist": [
+      "**/react",
+      "**/react-dom",
+      "**/react-native",
+      "**/react-native/**"
     ]
   },
   "scripts": {
-    "web": "yarn workspace web"
+    "web": "yarn workspace web",
+    "mobile": "yarn workspace mobile",
+    "clean": "yarn lerna clean && yarn install"
   }
 }
