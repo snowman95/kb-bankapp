@@ -1,0 +1,29 @@
+{
+  "name": "kb-bankapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/snowman95/kb-bankapp.git",
+  "author": "snowman95 <hun2ya9@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^6.0.1"
+  },
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "shared/*"
+    ],
+    "nohoist": [
+      "**/react",
+      "**/react-dom",
+      "**/react-native",
+      "**/react-native/**"
+    ]
+  },
+  "scripts": {
+    "web": "yarn workspace web",
+    "mobile": "yarn workspace mobile",
+    "clean": "yarn lerna clean && yarn install"
+  }
+}
