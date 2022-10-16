@@ -13,5 +13,8 @@
     "packages": [
       "packages/*"
     ]
+  },
+  "scripts": {
+    "web": "yarn workspace web"
   }
 }
