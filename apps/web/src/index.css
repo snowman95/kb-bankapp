@@ -1,13 +1,96 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: "Noto Sans KR", "NanumSquare", Pretendard, Verdana, sans-serif,
+    -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+    "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* 버튼 클릭시 하이라이트 되는 파란 박스가 보이지 않게 해줌*/
+  -webkit-tap-highlight-color: transparent;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Reset CSS */
+/*** box sizing border-box for all elements ***/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+button {
+  background-color: transparent;
+  color: inherit;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
+}
+figure {
+  margin: 0;
+}
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+ul,
+ol,
+dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+p {
+  margin: 0;
+}
+cite {
+  font-style: normal;
+}
+fieldset {
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+}
+/* 스크롤 너비 제거 */
+section::-webkit-scrollbar,
+div::-webkit-scrollbar,
+ul::-webkit-scrollbar {
+  display: none; /* 스크롤 숨기기 ios */
+}
+section,
+div,
+ul,
+textarea {
+  -ms-overflow-style: none; /* 스크롤 너비 제거 Edge, IE 10  */
+  scrollbar-width: none; /* 스크롤 너비 제거 Firefox 64 */
+  scroll-behavior: smooth; /* 부드러운 스크롤 */
+  overscroll-behavior: contain; /* 스크롤 체이닝 방지 */
+}
+/* 위 아래 경계선을 넘은 오버스크롤 방지*/
+body {
+  overscroll-behavior: none;
+}
+div,
+section,
+ul,
+li,
+span {
+  white-space: pre-line;
+  overflow-wrap: break-word; /* 비 아시아 언어에서 단어 줄바꿈 */
+  word-break: keep-all; /* 아시아 언어에서 단어 유지하여 줄바꿈. 다만 단어가 너무길면 줄바꿈 안되므로 따로 normal지정 */
 }
