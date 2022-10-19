@@ -13,16 +13,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
-    "baseUrl": "src",
-    "paths": {
-      "@src/*": ["src/*"],
-      "@assets/*": ["src/assets/*"],
-      "@component/*": ["src/component/*"],
-      "@types/*": ["src/types/*"],
-      "@styles/*": ["src/styles/*"]
-    }
+    "jsx": "preserve"
   },
+  "extends": "./tsconfig.paths.json",
   "include": ["src"],
   "exclude": ["build", "./build", "node_modules", "./node_modules", "webpack"]
 }

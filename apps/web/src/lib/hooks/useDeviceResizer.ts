@@ -5,9 +5,9 @@ import {
   setIsMobileView,
   setDeviceType,
   DeviceType,
-} from "modules/settingStore";
+} from "@src/modules/settingStore";
 import { isMobile, isTablet } from "react-device-detect";
-import { md } from "constants/mobile";
+import { md } from "@src/constants/mobile";
 
 export const useDeviceResizer = () => {
   const [windowWidth] = useWindowSize();
