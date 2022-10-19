@@ -17,8 +17,8 @@
     "nohoist": [
       "**/react",
       "**/react-dom",
-      "**/react-native",
-      "**/react-native/**"
+      "**/mobile",
+      "**/mobile/**"
     ]
   },
   "scripts": {
