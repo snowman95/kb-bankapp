@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { HEADER_HEIGHT } from "@src/constants";
 import { useTypedSelector } from "@src/lib/hooks/useStore";
 import { Mobile } from "@type-default";
 import { Link } from "react-router-dom";
@@ -36,7 +37,7 @@ const LandingContainer = styled.div<Mobile>`
     props.isMobileView &&
     `
         height: 100vh;
-        height: calc(var(--vh) * 100);
+        height: calc(var(--vh) * 100 - ${HEADER_HEIGHT}px);
     `}
 `;
 
