@@ -9,6 +9,7 @@ import { useDeviceResizer } from "./lib/hooks/useDeviceResizer";
 import { ResponsiveWrapper, 중앙정렬용ContainerStyle } from "./styles";
 import Header from "./components/Layout/Header";
 import Pay from "./pages/Pay";
+import Landing from "./pages/Landing";
 
 function App() {
   const location = useLocation();
@@ -28,8 +29,9 @@ function App() {
           <ResponsiveWrapper isMobileView={isMobileView}>
             <Header />
             <Routes key={location.key} location={location}>
-              <Route path="/" element={<>home page</>} />
+              <Route path="/" element={<Landing />} />
               <Route path="/pay" element={<Pay />} />
+              <Route path="/ai" element={<>ai service</>} />
               <Route path="*" element={<div>error page</div>}></Route>
             </Routes>
           </ResponsiveWrapper>
