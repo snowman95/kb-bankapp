@@ -1,12 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import { AnimatePresence } from "framer-motion";
-import { ResponsiveWrapper, 중앙정렬용ContainerStyle } from "styles";
-import { AnimatedFrame } from "styles/theme/motions";
-import { useTypedSelector } from "lib/hooks/useStore";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useDeviceResizer } from "lib/hooks/useDeviceResizer";
 import { Helmet } from "react-helmet-async";
+import { AnimatedFrame } from "@styles/theme/motions";
+import { useTypedSelector } from "./lib/hooks/useStore";
+import { useDeviceResizer } from "./lib/hooks/useDeviceResizer";
+import { ResponsiveWrapper, 중앙정렬용ContainerStyle } from "./styles";
+import Header from "./components/Layout/Header";
+import Pay from "./pages/Pay";
 
 function App() {
   const location = useLocation();
@@ -24,8 +26,10 @@ function App() {
       <AnimatePresence exitBeforeEnter initial={false}>
         <AnimatedFrame css={중앙정렬용ContainerStyle}>
           <ResponsiveWrapper isMobileView={isMobileView}>
+            <Header />
             <Routes key={location.key} location={location}>
               <Route path="/" element={<>home page</>} />
+              <Route path="/pay" element={<Pay />} />
               <Route path="*" element={<div>error page</div>}></Route>
             </Routes>
           </ResponsiveWrapper>
