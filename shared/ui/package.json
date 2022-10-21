@@ -60,7 +60,7 @@
         "build": "rollup -c",
         "new-build": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types && rollup -c",
         "build:types": "tsc --emitDeclarationOnly",
-        "build-storybook": "build-storybook",
+        "build-storybook": "yarn svgr && build-storybook",
         "build-storybook-cloudflare": "build-storybook -s public",
         "chromatic": "npx chromatic --project-token=f183bbe365fb",
         "svgr": "npx @svgr/cli --title-prop --typescript --out-dir src/assets/svgr -- src/assets/svg && node ./src/assets/autoExporter.js"
