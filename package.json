@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "lerna": "^6.0.1"
+    "lerna": "^6.0.1",
+    "typescript": "^4.8.4"
   },
   "workspaces": {
     "packages": [
@@ -18,12 +19,15 @@
       "**/react",
       "**/react-dom",
       "**/mobile",
-      "**/mobile/**"
+      "**/mobile/**",
+      "**/shared/ui",
+      "**/shared/ui/**"
     ]
   },
   "scripts": {
     "web": "yarn workspace web",
     "mobile": "yarn workspace mobile",
+    "ui": "yarn workspace ui",
     "clean": "yarn lerna clean && yarn install"
   }
 }
