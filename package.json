@@ -24,6 +24,9 @@
       "**/shared/ui/**"
     ]
   },
+  "resolutions": {
+    "react-docgen-typescript": "2.2.2"
+  },
   "scripts": {
     "web": "yarn workspace web",
     "mobile": "yarn workspace mobile",
