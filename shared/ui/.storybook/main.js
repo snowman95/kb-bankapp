@@ -27,6 +27,11 @@ module.exports = {
             require.resolve('@babel/preset-env'),
             require.resolve('@emotion/babel-preset-css-prop')
         ]
+        config.module.rules.push({
+            test: /\.mjs$/,
+            include: /node_modules/,
+            type: 'javascript/auto'
+        })
 
         return config
     }
