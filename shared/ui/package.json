@@ -48,6 +48,8 @@
         "@react-types/button": "3.6.1",
         "@react-types/shared": "3.14.1",
         "@types/react": "17.0.43",
+        "framer-motion": "6.3.3",
+        "gradient-path": "^2.3.0",
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "rollup-plugin-dts": "4.2.2"
