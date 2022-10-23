@@ -8,11 +8,6 @@ export default {
     title: 'components/Icon', // | 안 쓰도록 조심
     component: IconButton
 }
-/**
- *
- * @param args 제발
- * @returns
- */
 const Template: ComponentStory<typeof IconButton> = args => (
     <IconButton {...args} />
 )
