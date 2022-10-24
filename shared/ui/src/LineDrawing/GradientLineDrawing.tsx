@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { animate } from 'framer-motion'
 import { StarSvg } from './Path'
 const GAP = 0.01
+const GAP_MUL = 10
 
 const getGradientColor = ({
     v,
@@ -15,27 +16,50 @@ const getGradientColor = ({
     mainColor: string
     pointColor: string
 }) => {
-    if (v > 1 - GAP * 2) {
+    if (v > 1 - GAP) {
         return [
             { color: mainColor, pos: 0 },
             { color: mainColor, pos: 1 }
         ]
-    } else if (v > GAP * 2) {
+    } else if (v >= GAP * GAP_MUL) {
         return playReverse
             ? [
-                  { color: 'white', pos: 1 - v - GAP * 2 },
-                  { color: pointColor, pos: 1 - v - GAP },
-                  { color: mainColor, pos: 1 - v }
+                  { color: 'white', pos: 1 - v },
+                  { color: pointColor, pos: 1 - v + GAP },
+                  { color: mainColor, pos: 1 - v + GAP * GAP_MUL }
               ]
             : [
-                  { color: mainColor, pos: v - GAP * 2 },
+                  { color: mainColor, pos: v - GAP * GAP_MUL },
                   { color: pointColor, pos: v },
                   { color: 'white', pos: v + GAP }
+              ]
+    } else if (v >= (GAP * GAP_MUL) / 2) {
+        return playReverse
+            ? [
+                  { color: 'white', pos: 1 - v },
+                  { color: pointColor, pos: 1 - v + GAP },
+                  { color: mainColor, pos: 1 - v + (GAP * GAP_MUL) / 2 }
+              ]
+            : [
+                  { color: mainColor, pos: v - (GAP * GAP_MUL) / 2 },
+                  { color: pointColor, pos: v },
+                  { color: 'white', pos: v + GAP }
+              ]
+    } else if (v >= GAP) {
+        return playReverse
+            ? [
+                  { color: 'white', pos: 1 - v },
+                  { color: pointColor, pos: 1 - v + GAP }
+              ]
+            : [
+                  { color: pointColor, pos: v },
+                  { color: 'white', pos: v + GAP },
+                  { color: 'white', pos: 1 }
               ]
     }
     return [
         { color: 'white', pos: 0 },
-        { color: 'white', pos: 1 }
+        { color: 'white', pos: v }
     ]
 }
 
