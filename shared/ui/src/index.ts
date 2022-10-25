@@ -1,4 +1,5 @@
 export { colors } from './Colors'
 export { typography } from './Typography'
 export { default as IconButton } from './Icon/IconButton'
+export * as LineDrawing from './LineDrawing'
 export * as Icon from './assets/svgr'
