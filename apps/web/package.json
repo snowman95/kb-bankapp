@@ -1,11 +1,12 @@
 {
-  "name": "web",
+  "name": "@kb-bankapp/web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.5",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@kb-bankapp/ui": "^0.0.2",
     "@reduxjs/toolkit": "^1.8.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -51,6 +52,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.186",
-    "craco-alias": "^3.0.1"
+    "craco-alias": "^3.0.1",
+    "craco-babel-loader": "^1.0.3"
   }
 }
