@@ -13,6 +13,7 @@ import postcss from 'rollup-plugin-postcss'
 // import dts from 'rollup-plugin-dts'
 // import prettier from 'rollup-plugin-prettier'
 // import renameNodeModules from 'rollup-plugin-rename-node-modules'
+import typescript from '@rollup/plugin-typescript'
 
 import pkg from './package.json'
 
@@ -52,6 +53,7 @@ export default {
         }
     ],
     plugins: [
+        typescript(),
         // typescript에서 alias를 사용했다면 번들링시 명시해줘야 함.(절대경로시)
         alias({
             entries: pathEntries
