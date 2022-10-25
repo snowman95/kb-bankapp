@@ -18,19 +18,24 @@
     "nohoist": [
       "**/react",
       "**/react-dom",
+      "**/webpack",
       "**/mobile",
       "**/mobile/**",
-      "**/shared/ui",
-      "**/shared/ui/**"
+      "**/ui",
+      "**/ui/**",
+      "gradient-path"
     ]
   },
   "resolutions": {
     "react-docgen-typescript": "2.2.2"
   },
   "scripts": {
-    "web": "yarn workspace web",
-    "mobile": "yarn workspace mobile",
-    "ui": "yarn workspace ui",
-    "clean": "yarn lerna clean && yarn install"
+    "web": "yarn workspace @kb-bankapp/web",
+    "mobile": "yarn workspace @kb-bankapp/mobile",
+    "ui": "yarn workspace @kb-bankapp/ui",
+    "clean": "yarn lerna clean && yarn lerna bootstrap",
+    "reset": "yarn lerna clean && rm -rf yarn.lock && rm -rf node_modules && yarn add -D -W lerna && yarn lerna bootstrap",
+    "web:ui": "yarn ui build && yarn lerna bootstrap --scope @kb-bankapp/web",
+    "web:ui:add": "yarn lerna add @kb-bankapp/ui --scope=@kb-bankapp/web"
   }
 }
