@@ -7,7 +7,6 @@ import { AnimatedFrame } from "@styles/theme/motions";
 import { useTypedSelector } from "./lib/hooks/useStore";
 import { useDeviceResizer } from "./lib/hooks/useDeviceResizer";
 import { ResponsiveWrapper, 중앙정렬용ContainerStyle } from "./styles";
-import Header from "./components/Layout/Header";
 import Pay from "./pages/Pay";
 import Landing from "./pages/Landing";
 
@@ -24,10 +23,9 @@ function App() {
         <title>{"KB App for 액티브시니어"}</title>
         <meta property="og:title" content={"KB App for 액티브시니어"} />
       </Helmet>
-      <AnimatePresence exitBeforeEnter initial={false}>
+      <AnimatePresence exitBeforeEnter initial={true}>
         <AnimatedFrame css={중앙정렬용ContainerStyle}>
           <ResponsiveWrapper isMobileView={isMobileView}>
-            <Header />
             <Routes key={location.key} location={location}>
               <Route path="/" element={<Landing />} />
               <Route path="/pay" element={<Pay />} />
