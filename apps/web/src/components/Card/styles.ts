@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { colors, typography } from "@kb-bankapp/ui";
 import { motion } from "framer-motion";
 
 export const CardContainer = styled.div`
@@ -17,7 +18,7 @@ export const CardContainer = styled.div`
 export const CardCraousel = styled(motion.div)`
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
 `;
 
 export const CardBox = styled(motion.div)`
@@ -28,8 +29,8 @@ export const CardBox = styled(motion.div)`
   background: #edf1f9;
   border-radius: 8px;
 
-  width: 168px;
-  height: 272px;
+  width: 140px;
+  height: 227px;
 `;
 
 export const CardRegistrationBox = styled.div`
@@ -44,23 +45,25 @@ export const CardRegistrationText = styled.span`
   position: absolute;
   top: 38px;
   white-space: nowrap;
-  font: ${(props) => props.theme.textStyle.body02r};
-  color: ${(props) => props.theme.color.neutral30};
+  font: ${typography.body02r};
+  color: ${colors.neutral30};
 `;
 
 export const CardTitle = styled(motion.span)`
   position: absolute;
   white-space: nowrap;
-  font: ${(props) => props.theme.textStyle.title02};
-  color: ${(props) => props.theme.color.neutral10};
+  font: ${typography.h01};
+  font-weight: 400;
+  letter-spacing: -0.7px;
+  color: ${colors.neutral10};
 `;
 
 export const UsageHistoryLink = styled.span`
   cursor: pointer;
   margin-top: 20px;
   text-decoration: underline;
-  font: ${(props) => props.theme.textStyle.body01r};
-  color: ${(props) => props.theme.color.neutral30};
+  font: ${typography.body01r};
+  color: ${colors.neutral30};
 
   @media (max-height: 720px) {
     position: absolute;
