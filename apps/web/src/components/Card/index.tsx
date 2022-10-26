@@ -14,9 +14,11 @@ import {
   CardTitle,
   UsageHistoryLink,
 } from "./styles";
+import CardGoodDay from "@assets/card/card-gooday.png";
+import CardTitanium from "@assets/card/card-titanium.png";
 
-const CARD_COUNT = 2;
-const SPACE = 96 * (CARD_COUNT - 1);
+const CARD_COUNT = 3;
+const SPACE = 82 * (CARD_COUNT - 1);
 export const Cards = () => {
   const x = useMotionValue(SPACE);
   return (
@@ -56,7 +58,8 @@ export const Cards = () => {
           whileTap={{ cursor: "grabbing" }}
         >
           <CardManagement x={x} />
-          <Card x={x} index={0} title={""} />
+          <Card x={x} index={0} title={""} src={CardTitanium} />
+          <Card x={x} index={1} title={""} src={CardGoodDay} />
         </CardCraousel>
       </>
       <UsageHistoryLink>이용내역조회</UsageHistoryLink>
@@ -65,12 +68,12 @@ export const Cards = () => {
 };
 
 export const CardManagement = ({ x }: { x: MotionValue<number> }) => {
-  const opacity = useTransform(x, [0, SPACE], [0.5, 1]);
+  // const opacity = useTransform(x, [0, SPACE], [0.5, 1]);
   const scale = useTransform(x, [0, SPACE], [0.83, 1]);
   const textTop = useTransform(x, [0, SPACE], [0, -50]);
   const textOpacity = useTransform(x, [0, SPACE], [0, 1]);
   return (
-    <CardBox style={{ opacity, scale }}>
+    <CardBox style={{ scale }}>
       <CardTitle style={{ top: textTop, opacity: textOpacity }}>
         결제수단 추가/삭제
       </CardTitle>
@@ -86,20 +89,20 @@ interface CardProps {
   x: MotionValue<number>;
   index: number;
   title: string;
+  src: string;
 }
-export const Card = ({ x, index, title }: CardProps) => {
+export const Card = ({ x, index, title, src }: CardProps) => {
   const input = [-SPACE * (index + 1), -SPACE * index, SPACE * (1 - index)];
-  const opacity = useTransform(x, input, [0.5, 1, 0.5]);
+  // const opacity = useTransform(x, input, [0.5, 1, 0.5]);
   const scale = useTransform(x, input, [0.83, 1, 0.83]);
   const textTop = useTransform(x, input, [0, -50, 0]);
   const textOpacity = useTransform(x, input, [0, 1, 0]);
-
   return (
     <CardBox
-      style={{ opacity, scale }}
+      style={{ scale }}
       css={css`
-        background: #9ecee2;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+        background: url(${src}) no-repeat center;
+        background-size: cover;
       `}
     >
       <CardTitle style={{ top: textTop, opacity: textOpacity }}>
