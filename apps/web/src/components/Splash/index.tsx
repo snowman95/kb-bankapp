@@ -12,13 +12,15 @@ import { css } from "@emotion/react";
 
 export const Splash = () => {
   const pathRef = useRef<SVGPathElement>(null);
-  const [gp, setGp] = useState();
+  const [gp, setGp] = useState<any>();
 
   useEffect(() => {
     if (!gp) {
       if (pathRef?.current) {
         const newGp = LineDrawing.createGradientPath(pathRef);
-        setGp(newGp);
+        if (newGp) {
+          setGp(newGp);
+        }
       }
     } else {
       LineDrawing.setPathAnimation({
