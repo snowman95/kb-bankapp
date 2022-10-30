@@ -1,5 +1,5 @@
 import { EventBanner } from "@src/components/Banner/EventBanner";
-import { Cards } from "@src/components/Card";
+import { CardSlider } from "@src/components/Pay/CardSlider";
 import { PayMethod } from "@src/components/Pay/PayMethod";
 import { Vibration } from "@src/components/Vibration";
 import {
@@ -23,7 +23,7 @@ const Pay = () => {
         <VibrationContainer>
           <Vibration />
         </VibrationContainer>
-        <Cards />
+        <CardSlider />
         <div>
           <PaddingContainer>
             <EventBanner />

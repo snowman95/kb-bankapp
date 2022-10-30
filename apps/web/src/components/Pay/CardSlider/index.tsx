@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { ReactComponent as CardRegistration } from "@assets/pay-card-registration.svg";
-import IconButton from "../UI/Button";
+import IconButton from "../../UI/Button";
 import {
   animate,
   MotionValue,
@@ -24,7 +23,7 @@ import { colors, Icon } from "@kb-bankapp/ui";
 
 const CARD_COUNT = 3;
 const SPACE = 82 * (CARD_COUNT - 1);
-export const Cards = () => {
+export const CardSlider = () => {
   const x = useMotionValue(SPACE);
   return (
     <CardContainer>
