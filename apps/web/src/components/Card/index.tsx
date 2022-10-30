@@ -2,7 +2,12 @@
 import { css } from "@emotion/react";
 import { ReactComponent as CardRegistration } from "@assets/pay-card-registration.svg";
 import IconButton from "../UI/Button";
-import { MotionValue, useMotionValue, useTransform } from "framer-motion";
+import {
+  animate,
+  MotionValue,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 import theme from "@src/styles/theme";
 import SvgArrow from "@src/assets/PayCardArrow";
 import {
@@ -33,7 +38,7 @@ export const Cards = () => {
           left: 24px;
         `}
         onClick={() => {
-          x.set(SPACE);
+          animate(x, Math.min(SPACE, x.get() + SPACE));
         }}
       />
       <IconButton
@@ -47,7 +52,7 @@ export const Cards = () => {
           right: 24px;
         `}
         onClick={() => {
-          x.set(-SPACE);
+          animate(x, Math.max(-SPACE, x.get() - SPACE));
         }}
       />
       <>
@@ -70,7 +75,7 @@ export const Cards = () => {
 export const CardManagement = ({ x }: { x: MotionValue<number> }) => {
   // const opacity = useTransform(x, [0, SPACE], [0.5, 1]);
   const scale = useTransform(x, [0, SPACE], [0.83, 1]);
-  const textTop = useTransform(x, [0, SPACE], [0, -50]);
+  const textTop = useTransform(x, [0, SPACE], [-20, -70]);
   const textOpacity = useTransform(x, [0, SPACE], [0, 1]);
   return (
     <CardBox style={{ scale }}>
