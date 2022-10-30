@@ -1,4 +1,4 @@
-import { GradientPath } from 'gradient-path'
+import GradientPath from 'gradient-path-typescript'
 import { animate } from 'framer-motion'
 
 const GAP = 0.01
@@ -90,12 +90,14 @@ const reset = () => {
 export const createGradientPath = (
     pathRef: React.RefObject<SVGPathElement>
 ) => {
-    return new GradientPath({
-        path: pathRef?.current,
-        segments: 80, // 얼마나 많은 다른 색상을 표시?
-        samples: 10, //  샘플이 많을수록 경로가 더 구체적으로 둥글게 됩니다.
-        precision: 2 // Optional 경로의 각 점에 대해 유지할 소수 자릿수
-    })
+    if (pathRef?.current) {
+        return new GradientPath({
+            path: pathRef?.current,
+            segments: 80, // 얼마나 많은 다른 색상을 표시?
+            samples: 10, //  샘플이 많을수록 경로가 더 구체적으로 둥글게 됩니다.
+            precision: 2 // Optional 경로의 각 점에 대해 유지할 소수 자릿수
+        })
+    }
 }
 export const setPathAnimation = ({
     gp,
