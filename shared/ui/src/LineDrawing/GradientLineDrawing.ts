@@ -1,4 +1,4 @@
-import GradientPath from 'gradient-path-typescript'
+import { GradientPath } from 'gradient-path'
 import { animate } from 'framer-motion'
 
 const GAP = 0.01

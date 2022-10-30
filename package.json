@@ -17,6 +17,7 @@
     ],
     "nohoist": [
       "**/webpack",
+      "**/gradient-path",
       "**/mobile",
       "**/mobile/**"
     ]
