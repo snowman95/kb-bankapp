@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
-import { ReactComponent as PhoneVibration } from "@assets/pay-phone-vibration.svg";
+import { colors, Icon } from "@kb-bankapp/ui";
 
 export const Vibration = () => {
   return (
     <Container>
       <span>흔들기 OFF</span>
-      <PhoneVibration />
+      <Icon.Pay.Vibration color={colors.neutral50} />
     </Container>
   );
 };

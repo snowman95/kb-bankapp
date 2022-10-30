@@ -9,7 +9,6 @@ import {
   useTransform,
 } from "framer-motion";
 import theme from "@src/styles/theme";
-import SvgArrow from "@src/assets/PayCardArrow";
 import {
   CardBox,
   CardContainer,
@@ -21,17 +20,19 @@ import {
 } from "./styles";
 import CardGoodDay from "@assets/card/card-gooday.png";
 import CardTitanium from "@assets/card/card-titanium.png";
+import { Icon } from "@kb-bankapp/ui";
 
 const CARD_COUNT = 3;
-const SPACE = 82 * (CARD_COUNT - 1);
+const SPACE = 84 * (CARD_COUNT - 1);
 export const Cards = () => {
   const x = useMotionValue(SPACE);
   return (
     <CardContainer>
       <IconButton
-        icon={<SvgArrow />}
+        icon={<Icon.Pay.CardArrow />}
         size={"MEDIUM"}
         color={theme.color.neutral90}
+        rotationDir="LEFT"
         emotionCss={css`
           z-index: 1;
           position: absolute;
@@ -42,10 +43,10 @@ export const Cards = () => {
         }}
       />
       <IconButton
-        icon={<SvgArrow />}
-        rotationDir={"DOWN"}
+        icon={<Icon.Pay.CardArrow />}
         size={"MEDIUM"}
         color={theme.color.neutral60}
+        rotationDir="RIGHT"
         emotionCss={css`
           z-index: 1;
           position: absolute;
