@@ -10,6 +10,7 @@ import { ResponsiveWrapper, 중앙정렬용ContainerStyle } from "./styles";
 import Pay from "./pages/Pay";
 import Landing from "./pages/Landing";
 import OnSitePay from "./pages/Pay/OnSite";
+import { PaymentDone } from "./pages/Pay/PaymentDone";
 
 function App() {
   const location = useLocation();
@@ -31,6 +32,7 @@ function App() {
               <Route path="/" element={<Landing />} />
               <Route path="/pay" element={<Pay />} />
               <Route path="/pay/onsite" element={<OnSitePay />} />
+              <Route path="/pay/done" element={<PaymentDone />} />
               <Route path="/ai" element={<>ai service</>} />
               <Route path="*" element={<div>error page</div>}></Route>
             </Routes>
