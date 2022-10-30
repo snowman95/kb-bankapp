@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { colors } from "@kb-bankapp/ui";
-import Coins from "@assets/banner/coins.png";
+import Coins from "@assets/coin/coins.png";
 
 interface EventBannerProps {
   onClickCallback?(): void;
