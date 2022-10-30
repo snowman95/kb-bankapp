@@ -1236,10 +1236,10 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@craco/craco@^6.4.5":
-  version "6.4.5"
-  resolved "https://registry.yarnpkg.com/@craco/craco/-/craco-6.4.5.tgz#471e67082a2ffd3edf73759b215bdc16250d27b3"
-  integrity sha512-8F2rIAao8sEh0FPP52ViEvDM9GjJ7acq0knu1c8UgI+EuZMD5/ZB270ol6jV4iNY7it9Umg/RoGBvNRUNr8U8w==
+"@craco/craco@7.0.0-alpha.3":
+  version "7.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@craco/craco/-/craco-7.0.0-alpha.3.tgz#158355141c9a007cf2ee04c8071b0ee44dfa4aae"
+  integrity sha512-ht3RsMMsg0xWaEbe1hh4DMM84njUzUXoBZ/lQXptPrQ0CR3w4dEXEn6kgw0rNwZbkbURxuB/dVRxroOQJ4F1YQ==
   dependencies:
     cosmiconfig "^7.0.1"
     cosmiconfig-typescript-loader "^1.0.0"
@@ -5712,15 +5712,6 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@17.0.43":
-  version "17.0.43"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.43.tgz#4adc142887dd4a2601ce730bc56c3436fdb07a55"
-  integrity sha512-8Q+LNpdxf057brvPu1lMtC5Vn7J119xrP1aq4qiaefNioQUYANF/CYeK4NsKorSZyUGJ66g0IM+4bbjwx45o2A==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
 "@types/resolve@1.17.1":
   version "1.17.1"
   resolved "https://registry.yarnpkg.com/@types/resolve/-/resolve-1.17.1.tgz#3afd6ad8967c77e4376c598a82ddd58f46ec45d6"
@@ -8654,6 +8645,11 @@ craco-alias@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/craco-alias/-/craco-alias-3.0.1.tgz#45e5cb338b222a7f62d17e398b54aff7cf1572af"
   integrity sha512-N+Qaf/Gr/f3o5ZH2TQjMu5NhR9PnT1ZYsfejpNvZPpB0ujdrhsSr4Ct6GVjnV5ostCVquhTKJpIVBKyL9qDQYA==
+
+craco-babel-loader@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/craco-babel-loader/-/craco-babel-loader-1.0.3.tgz#9939113b2019815dc1f5cbab279b6309848bd389"
+  integrity sha512-kkXRwI8ieNO5ypmBz6NPz/4f5xQ/qFnI0g6O6ztkGpi/TEfMJQ65sZP3vYRJaHqfAx/V7YGxcSjkgA7U1thXJw==
 
 create-ecdh@^4.0.0:
   version "4.0.4"

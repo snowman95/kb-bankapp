@@ -16,14 +16,9 @@
       "shared/*"
     ],
     "nohoist": [
-      "**/react",
-      "**/react-dom",
       "**/webpack",
       "**/mobile",
-      "**/mobile/**",
-      "**/ui",
-      "**/ui/**",
-      "gradient-path"
+      "**/mobile/**"
     ]
   },
   "resolutions": {
