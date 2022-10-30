@@ -5,6 +5,8 @@
     "module": "dist/index.js",
     "license": "MIT",
     "devDependencies": {
+        "@types/react": "^18.0.21",
+        "@types/react-dom": "17.0.11",
         "@babel/core": "^7.16.12",
         "@babel/plugin-transform-runtime": "7.17.12",
         "@rollup/plugin-alias": "3.1.9",
@@ -48,9 +50,7 @@
         "@react-spectrum/utils": "3.7.3",
         "@react-types/button": "3.6.1",
         "@react-types/shared": "3.14.1",
-        "@types/react": "17.0.43",
         "framer-motion": "6.3.3",
-        "gradient-path": "^2.3.0",
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "rollup-plugin-dts": "4.2.2"
@@ -72,9 +72,9 @@
         "@emotion/babel-preset-css-prop": "^11.2.0",
         "@emotion/react": "^11.7.1",
         "@emotion/styled": "^11.6.0",
-        "@types/react": "^16.8.6 || ^17.0.0",
-        "react": "^17.0.0",
-        "react-dom": "^17.0.0"
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "gradient-path": "^2.3.0"
     },
     "author": "snowman95",
     "types": "dist/types/index.d.ts",
