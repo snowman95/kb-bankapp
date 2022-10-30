@@ -1,9 +1,5 @@
 import * as React from 'react'
 import { SVGProps } from 'react'
-interface SVGRProps {
-    title?: string;
-    titleId?: string;
-}
 import { SvgBaseProps } from 'src/assets/svgr/types'
 const SvgCardArrow = ({
     size,
@@ -24,11 +20,10 @@ const SvgCardArrow = ({
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             role="img"
-            aria-labelledby={titleId}
+            aria-labelledby={ariaLabelledBy}
             aria-hidden={!!ariaLabelledBy}
             {...props}
         >
-            {title ? <title id={titleId}>{title}</title> : null}
             {!!title && <title id={titleId}>{title}</title>}
             {!!desc && <desc id={descId}>{desc}</desc>}
             <path
