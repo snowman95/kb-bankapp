@@ -32,7 +32,8 @@ function App() {
               <Route path="/" element={<Landing />} />
               <Route path="/pay" element={<Pay />} />
               <Route path="/pay/onsite" element={<OnSitePay />} />
-              <Route path="/pay/done" element={<PaymentDone />} />
+              <Route path="/pay/done/1" element={<PaymentDone page="1" />} />
+              <Route path="/pay/done/2" element={<PaymentDone page="2" />} />
               <Route path="/ai" element={<>ai service</>} />
               <Route path="*" element={<div>error page</div>}></Route>
             </Routes>
