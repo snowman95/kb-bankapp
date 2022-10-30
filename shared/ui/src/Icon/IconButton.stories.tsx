@@ -17,27 +17,53 @@ templateIcon.args = {
     disabled: false,
     onclick: () => console.log('Icon clicked')
 }
-
-export const ArrowIcon = Template.bind({})
-ArrowIcon.args = {
+export const HeaderArrow = Template.bind({})
+HeaderArrow.args = {
     ...templateIcon.args,
-    icon: <Icon.Memo.Arrow />
+    icon: <Icon.Header.Arrow />
 }
-
-export const CloseIcon = Template.bind({})
-CloseIcon.args = {
+export const HeaderHome = Template.bind({})
+HeaderHome.args = {
     ...templateIcon.args,
-    icon: <Icon.Memo.Close />
+    icon: <Icon.Header.Home />
 }
-
-export const ListIcon = Template.bind({})
-ListIcon.args = {
+export const HeaderMenu = Template.bind({})
+HeaderMenu.args = {
     ...templateIcon.args,
-    icon: <Icon.Memo.List />
+    icon: <Icon.Header.Menu />
 }
-
-export const List2Icon = Template.bind({})
-List2Icon.args = {
+export const CardArrow = Template.bind({})
+CardArrow.args = {
     ...templateIcon.args,
-    icon: <Icon.Memo.List />
+    icon: <Icon.Pay.CardArrow />
+}
+export const CardRegistration = Template.bind({})
+CardRegistration.args = {
+    ...templateIcon.args,
+    icon: <Icon.Pay.CardRegistration />
+}
+export const Membership = Template.bind({})
+Membership.args = {
+    ...templateIcon.args,
+    icon: <Icon.Pay.Membership />
+}
+export const OnSite = Template.bind({})
+OnSite.args = {
+    ...templateIcon.args,
+    icon: <Icon.Pay.OnSite />
+}
+export const QrCode = Template.bind({})
+QrCode.args = {
+    ...templateIcon.args,
+    icon: <Icon.Pay.QrCode />
+}
+export const TransferArrow = Template.bind({})
+TransferArrow.args = {
+    ...templateIcon.args,
+    icon: <Icon.Pay.TransferArrow />
+}
+export const Vibration = Template.bind({})
+Vibration.args = {
+    ...templateIcon.args,
+    icon: <Icon.Pay.Vibration />
 }

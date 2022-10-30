@@ -1,11 +1,16 @@
 import { EventBanner } from "@src/components/Banner/EventBanner";
-import { Cards } from "@src/components/Card";
+import { CardSlider } from "@src/components/Pay/CardSlider";
 import { PayMethod } from "@src/components/Pay/PayMethod";
 import { Vibration } from "@src/components/Vibration";
-import { PayContainer, RewardTransferText, VibrationContainer } from "./styles";
-import { ReactComponent as PaymentTransfer } from "@assets/pay-payment-transfer.svg";
+import {
+  PaddingContainer,
+  PayContainer,
+  RewardTransferText,
+  VibrationContainer,
+} from "./styles";
 import { useTypedSelector } from "@src/lib/hooks/useStore";
 import Header from "@src/components/Layout/Header";
+import { IconButton, Icon } from "@kb-bankapp/ui";
 
 const Pay = () => {
   const isMobilveView = useTypedSelector(
@@ -18,13 +23,15 @@ const Pay = () => {
         <VibrationContainer>
           <Vibration />
         </VibrationContainer>
-        <Cards />
+        <CardSlider />
         <div>
-          <EventBanner />
+          <PaddingContainer>
+            <EventBanner />
+          </PaddingContainer>
           <PayMethod />
           <RewardTransferText>
             <span>KB스타뱅킹 페이 리워드 이체하기</span>
-            <PaymentTransfer />
+            <IconButton icon={<Icon.Pay.TransferArrow />} rotationDir="RIGHT" />
           </RewardTransferText>
         </div>
       </PayContainer>

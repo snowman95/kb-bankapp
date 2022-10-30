@@ -1,39 +1,58 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { colors } from "@kb-bankapp/ui";
+import Coins from "@assets/coin/coins.png";
 
-export const EventBanner = () => {
+interface EventBannerProps {
+  onClickCallback?(): void;
+}
+
+export const EventBanner = ({ onClickCallback }: EventBannerProps) => {
   return (
-    <BannerContainer>
-      <Content>월 최대 12,000 리워드</Content>
-      <span>
-        <BoldContent>5% 리워드 적립 </BoldContent>
-        <BoldContent
-          css={css`
-            color: #427cf6;
-          `}
-        >
-          (응모필수)
-        </BoldContent>
-      </span>
+    <BannerContainer onClick={onClickCallback}>
+      <BannerBox>
+        <Content>월 최대 12,000 리워드</Content>
+        <span>
+          <BoldContent>5% 리워드 적립 </BoldContent>
+          <BoldContent
+            css={css`
+              color: ${colors.neutral100};
+            `}
+          >
+            (응모필수)
+          </BoldContent>
+        </span>
+      </BannerBox>
+      <img src={Coins} alt="coins" height="100%" />
     </BannerContainer>
   );
 };
+const BannerContainer = styled.button`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
 
-const BannerContainer = styled.div`
+  background-color: ${colors.primary2};
+  padding-right: 21px;
+
+  width: 100%;
+  :hover {
+    opacity: 0.9;
+  }
+`;
+
+const BannerBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-
-  background-color: #f7f7f7;
-  border-radius: 4px;
-
-  margin: 0 24px;
-  padding: 24px 20px;
+  padding: 24px 0 24px 20px;
 `;
 const Content = styled.span`
   font: ${(props) => props.theme.textStyle.body03r};
-  color: ${(props) => props.theme.color.neutral60};
+  font-size: 13px;
+  color: ${(props) => props.theme.color.neutral30};
 `;
 const BoldContent = styled.span`
   font: ${(props) => props.theme.textStyle.body01m};

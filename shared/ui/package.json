@@ -21,6 +21,8 @@
         "@storybook/react": "^6.5.12",
         "@svgr/cli": "6.3.1",
         "@svgr/rollup": "6.2.1",
+        "@types/react": "^18.0.21",
+        "@types/react-dom": "17.0.11",
         "babel-loader": "^8.2.3",
         "babel-preset-react-app": "10.0.1",
         "chromatic": "6.5.3",
@@ -48,12 +50,11 @@
         "@react-spectrum/utils": "3.7.3",
         "@react-types/button": "3.6.1",
         "@react-types/shared": "3.14.1",
-        "@types/react": "17.0.43",
         "framer-motion": "6.3.3",
-        "gradient-path": "^2.3.0",
         "react": "17.0.2",
         "react-dom": "17.0.2",
-        "rollup-plugin-dts": "4.2.2"
+        "rollup-plugin-dts": "4.2.2",
+        "gradient-path": "^2.3.0"
     },
     "resolutions": {
         "react-docgen-typescript": "2.2.2"
@@ -66,15 +67,17 @@
         "build-storybook": "yarn svgr && build-storybook",
         "build-storybook-cloudflare": "build-storybook -s public",
         "chromatic": "npx chromatic --project-token=f183bbe365fb",
-        "svgr": "npx @svgr/cli --title-prop --typescript --out-dir src/assets/svgr -- src/assets/svg && node ./src/assets/autoExporter.js"
+        "svgr": "yarn build:svg && yarn build:index",
+        "build:svg": "npx @svgr/cli -- src/assets/svg",
+        "build:index": "node ./src/assets/autoExporter.js"
     },
     "peerDependencies": {
         "@emotion/babel-preset-css-prop": "^11.2.0",
         "@emotion/react": "^11.7.1",
         "@emotion/styled": "^11.6.0",
-        "@types/react": "^16.8.6 || ^17.0.0",
-        "react": "^17.0.0",
-        "react-dom": "^17.0.0"
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "gradient-path": "^2.3.0"
     },
     "author": "snowman95",
     "types": "dist/types/index.d.ts",
