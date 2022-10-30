@@ -20,10 +20,10 @@ import {
 } from "./styles";
 import CardGoodDay from "@assets/card/card-gooday.png";
 import CardTitanium from "@assets/card/card-titanium.png";
-import { Icon } from "@kb-bankapp/ui";
+import { colors, Icon } from "@kb-bankapp/ui";
 
 const CARD_COUNT = 3;
-const SPACE = 84 * (CARD_COUNT - 1);
+const SPACE = 82 * (CARD_COUNT - 1);
 export const Cards = () => {
   const x = useMotionValue(SPACE);
   return (
@@ -84,7 +84,10 @@ export const CardManagement = ({ x }: { x: MotionValue<number> }) => {
         결제수단 추가/삭제
       </CardTitle>
       <CardRegistrationBox>
-        <IconButton icon={<CardRegistration />} />
+        <IconButton
+          icon={<Icon.Pay.CardRegistration />}
+          color={colors.neutral20}
+        />
         <CardRegistrationText>결제수단 관리</CardRegistrationText>
       </CardRegistrationBox>
     </CardBox>
