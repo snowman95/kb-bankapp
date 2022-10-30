@@ -1,14 +1,10 @@
-/** @jsx jsx */
-/** @jsxFrag pragma */
 import { SerializedStyles, css, jsx } from '@emotion/react'
-import React, { useCallback, useEffect, useState } from 'react'
+import React from 'react'
 import { IconSize, ICON_SIZE, ICON_DIRECTION, IconDirection } from './constant'
 
 export interface IButtonIcon {
     /** 아이콘의 유형을 설정합니다. */
-    icon: React.ReactElement
-    /** 아이콘 stroke색상을 설정합니다. (default #000) */
-    color?: string
+    icon: jsx.JSX.Element
     /** 아이콘 버튼 크기를 설정합니다. (default SMALL=28px) */
     size?: IconSize
     /** 회전 방향을 설정합니다. (default UP) */
@@ -20,41 +16,19 @@ export interface IButtonIcon {
     /** css방식의 custom emotion 태그를 사용할 수 있습니다. */
     emotionCss?: SerializedStyles
 }
-const COLOR = {
-    PRESSED: '#707070',
-    DISABLED: '#d2d6da'
-}
+
 const IconButton = ({
     icon,
-    color,
     size,
     disabled,
     rotationDir,
     onClick,
     emotionCss
 }: IButtonIcon): React.ReactElement => {
-    const [iconColor, setIconColor] = useState(color)
-
-    const handleButtonDown = useCallback(
-        (e: React.MouseEvent<HTMLButtonElement>) => setIconColor(COLOR.PRESSED),
-        []
-    )
-    const handleButtonUp = useCallback(
-        (e: React.MouseEvent<HTMLButtonElement>) => setIconColor(color),
-        [color]
-    )
-
-    useEffect(() => {
-        setIconColor(disabled ? COLOR.DISABLED : color)
-    }, [disabled, color])
-
-    const clonedIcon = React.cloneElement(icon, { color: iconColor })
+    const clonedIcon = React.cloneElement(icon)
     return (
         <button
             onClick={onClick}
-            onMouseDown={handleButtonDown}
-            onMouseUp={handleButtonUp}
-            onMouseLeave={handleButtonUp}
             disabled={disabled}
             css={[
                 css`
