@@ -66,7 +66,9 @@
         "build-storybook": "yarn svgr && build-storybook",
         "build-storybook-cloudflare": "build-storybook -s public",
         "chromatic": "npx chromatic --project-token=f183bbe365fb",
-        "svgr": "npx @svgr/cli --title-prop --typescript --out-dir src/assets/svgr -- src/assets/svg && node ./src/assets/autoExporter.js"
+        "svgr": "yarn build:svg && yarn build:index",
+        "build:svg": "npx @svgr/cli -- src/assets/svg",
+        "build:index": "node ./src/assets/autoExporter.js"
     },
     "peerDependencies": {
         "@emotion/babel-preset-css-prop": "^11.2.0",
