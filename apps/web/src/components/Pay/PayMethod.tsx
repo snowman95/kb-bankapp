@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
-import { ReactComponent as OnSite } from "@assets/pay-payment-on-site.svg";
-import { ReactComponent as QRCode } from "@assets/pay-payment-qr-code.svg";
+import { colors, Icon } from "@kb-bankapp/ui";
 import IconButton from "../UI/Button";
 
 export const PayMethod = () => {
@@ -13,12 +12,12 @@ export const PayMethod = () => {
   return (
     <PayContainer>
       <PayBox onClick={handleOnSitePayment}>
-        <IconButton icon={<OnSite />} />
+        <IconButton icon={<Icon.Pay.OnSite />} color={colors.neutral60} />
         현장결제
       </PayBox>
-      <Seperator>|</Seperator>
+      <Separator>|</Separator>
       <PayBox onClick={handleQRCodePayment}>
-        <IconButton icon={<QRCode />} />
+        <IconButton icon={<Icon.Pay.QrCode />} color={colors.neutral60} />
         PC결제
       </PayBox>
     </PayContainer>
@@ -46,6 +45,6 @@ const PayBox = styled.div`
   gap: 2px;
   width: 100%;
 `;
-const Seperator = styled.div`
+const Separator = styled.div`
   color: ${(props) => props.theme.color.neutral80};
 `;

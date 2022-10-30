@@ -17,11 +17,13 @@ export const PayContainer = styled.div<Mobile>`
     `}
 `;
 
-export const VibrationContainer = styled.div`
+export const PaddingContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
-
   padding: 0 24px;
+`;
+
+export const VibrationContainer = styled(PaddingContainer)`
+  justify-content: flex-end;
 `;
 export const RewardTransferText = styled.div`
   display: flex;

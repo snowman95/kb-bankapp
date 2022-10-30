@@ -2,9 +2,13 @@
 import { css } from "@emotion/react";
 import { ReactComponent as CardRegistration } from "@assets/pay-card-registration.svg";
 import IconButton from "../UI/Button";
-import { MotionValue, useMotionValue, useTransform } from "framer-motion";
+import {
+  animate,
+  MotionValue,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 import theme from "@src/styles/theme";
-import SvgArrow from "@src/assets/PayCardArrow";
 import {
   CardBox,
   CardContainer,
@@ -16,6 +20,7 @@ import {
 } from "./styles";
 import CardGoodDay from "@assets/card/card-gooday.png";
 import CardTitanium from "@assets/card/card-titanium.png";
+import { colors, Icon } from "@kb-bankapp/ui";
 
 const CARD_COUNT = 3;
 const SPACE = 82 * (CARD_COUNT - 1);
@@ -24,30 +29,31 @@ export const Cards = () => {
   return (
     <CardContainer>
       <IconButton
-        icon={<SvgArrow />}
+        icon={<Icon.Pay.CardArrow />}
         size={"MEDIUM"}
         color={theme.color.neutral90}
+        rotationDir="LEFT"
         emotionCss={css`
           z-index: 1;
           position: absolute;
           left: 24px;
         `}
         onClick={() => {
-          x.set(SPACE);
+          animate(x, Math.min(SPACE, x.get() + SPACE));
         }}
       />
       <IconButton
-        icon={<SvgArrow />}
-        rotationDir={"DOWN"}
+        icon={<Icon.Pay.CardArrow />}
         size={"MEDIUM"}
         color={theme.color.neutral60}
+        rotationDir="RIGHT"
         emotionCss={css`
           z-index: 1;
           position: absolute;
           right: 24px;
         `}
         onClick={() => {
-          x.set(-SPACE);
+          animate(x, Math.max(-SPACE, x.get() - SPACE));
         }}
       />
       <>
@@ -70,7 +76,7 @@ export const Cards = () => {
 export const CardManagement = ({ x }: { x: MotionValue<number> }) => {
   // const opacity = useTransform(x, [0, SPACE], [0.5, 1]);
   const scale = useTransform(x, [0, SPACE], [0.83, 1]);
-  const textTop = useTransform(x, [0, SPACE], [0, -50]);
+  const textTop = useTransform(x, [0, SPACE], [-20, -70]);
   const textOpacity = useTransform(x, [0, SPACE], [0, 1]);
   return (
     <CardBox style={{ scale }}>
@@ -78,7 +84,10 @@ export const CardManagement = ({ x }: { x: MotionValue<number> }) => {
         결제수단 추가/삭제
       </CardTitle>
       <CardRegistrationBox>
-        <IconButton icon={<CardRegistration />} />
+        <IconButton
+          icon={<Icon.Pay.CardRegistration />}
+          color={colors.neutral20}
+        />
         <CardRegistrationText>결제수단 관리</CardRegistrationText>
       </CardRegistrationBox>
     </CardBox>
