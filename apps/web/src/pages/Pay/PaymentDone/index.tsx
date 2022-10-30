@@ -1,11 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { colors, Icon } from "@kb-bankapp/ui";
+import { CoinDrop } from "@src/components/Pay/CoinDrop";
 import { Cooperation } from "@src/components/Pay/Cooperation";
 import { useTypedSelector } from "@src/lib/hooks/useStore";
 import { PaymentDoneContainer, PaymentDoweTitle, Wave } from "./styles";
 
-export const PaymentDone = () => {
+export const PaymentDone = ({ page }: { page: "1" | "2" }) => {
   const isMobilveView = useTypedSelector(
     (state) => state.settingStore.isMobileView
   );
@@ -31,7 +32,7 @@ export const PaymentDone = () => {
           `}
         />
       </PaymentDoweTitle>
-      <Cooperation />
+      {page === "1" ? <Cooperation /> : <CoinDrop />}
     </PaymentDoneContainer>
   );
 };
