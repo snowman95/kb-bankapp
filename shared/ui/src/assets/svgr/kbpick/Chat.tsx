@@ -1,14 +1,7 @@
 import * as React from 'react'
 import { SVGProps } from 'react'
 import { SvgBaseProps } from 'src/assets/svgr/types'
-const SvgChat = ({
-    size,
-    title,
-    desc,
-    titleId,
-    descId,
-    ...props
-}: SvgBaseProps) => {
+const SvgChat = ({ title, desc, titleId, descId, ...props }: SvgBaseProps) => {
     let ariaLabelledBy = titleId ? titleId : ''
     ariaLabelledBy += desc && descId ? ` ${descId}` : ''
     props['aria-labelledby'] = ariaLabelledBy

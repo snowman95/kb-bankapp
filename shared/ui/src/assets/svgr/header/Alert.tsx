@@ -1,14 +1,7 @@
 import * as React from 'react'
 import { SVGProps } from 'react'
 import { SvgBaseProps } from 'src/assets/svgr/types'
-const SvgAlram = ({
-    size,
-    title,
-    desc,
-    titleId,
-    descId,
-    ...props
-}: SvgBaseProps) => {
+const SvgAlert = ({ title, desc, titleId, descId, ...props }: SvgBaseProps) => {
     let ariaLabelledBy = titleId ? titleId : ''
     ariaLabelledBy += desc && descId ? ` ${descId}` : ''
     props['aria-labelledby'] = ariaLabelledBy
@@ -39,4 +32,4 @@ const SvgAlram = ({
         </svg>
     )
 }
-export default SvgAlram
+export default SvgAlert

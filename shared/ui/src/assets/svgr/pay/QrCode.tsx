@@ -2,7 +2,6 @@ import * as React from 'react'
 import { SVGProps } from 'react'
 import { SvgBaseProps } from 'src/assets/svgr/types'
 const SvgQrCode = ({
-    size,
     title,
     desc,
     titleId,
