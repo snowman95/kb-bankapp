@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { SVGProps } from 'react'
 import { SvgBaseProps } from 'src/assets/svgr/types'
-const SvgCardRegistration = ({
+const SvgSearch = ({
     title,
     desc,
     titleId,
@@ -24,19 +24,21 @@ const SvgCardRegistration = ({
         >
             {!!title && <title id={titleId}>{title}</title>}
             {!!desc && <desc id={descId}>{desc}</desc>}
-            <path
-                d="M14 1V27"
+            <circle
+                cx={12.5}
+                cy={12.5}
+                r={7.5}
                 stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="square"
+                strokeWidth={1.5}
             />
             <path
-                d="M27 14L0.999999 14"
+                d="M18 18L23 23"
                 stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="square"
+                strokeWidth={1.5}
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
         </svg>
     )
 }
-export default SvgCardRegistration
+export default SvgSearch
