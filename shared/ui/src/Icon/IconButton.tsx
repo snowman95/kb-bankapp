@@ -36,7 +36,8 @@ export const THEME: {
 } = {
     CUSTOM: {
         ICON_COLOR: {
-            IDLE: '#000'
+            IDLE: '#000',
+            DISABLED: colors.neutral90
         },
         BG_COLOR: {},
         BD_RADIUS: 'ALL',
@@ -54,7 +55,8 @@ export const THEME: {
     },
     PAY: {
         ICON_COLOR: {
-            IDLE: colors.neutral60
+            IDLE: colors.neutral60,
+            DISABLED: colors.neutral95
         },
         BG_COLOR: {},
         BD_RADIUS: 'ALL',
@@ -63,23 +65,24 @@ export const THEME: {
     },
     KBPICK: {
         ICON_COLOR: {
-            DISABLED: colors.neutral95,
-            IDLE: colors.neutral20
+            IDLE: colors.neutral20,
+            DISABLED: colors.neutral95
         },
         BG_COLOR: {
             DISABLED: colors.neutral95,
             PRESSED: colors.neutral99
         },
         BD_RADIUS: 'ALL',
-        SIZE: 'SMALL',
+        SIZE: 'MEDIUM',
         DIR: 'UP'
     },
     STAR: {
         ICON_COLOR: {
-            IDLE: colors.primary1
+            IDLE: colors.primary1,
+            DISABLED: colors.neutral95
         },
         BG_COLOR: {},
-        SIZE: 'SMALL',
+        SIZE: 'TINY',
         BD_RADIUS: 'ALL',
         DIR: 'UP'
     }
