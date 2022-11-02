@@ -11,7 +11,6 @@ ${interfaces};
 import {SvgBaseProps} from 'src/assets/svgr/types'
 
 const ${componentName} = ({
-  size,
   title,
   desc,
   titleId,
