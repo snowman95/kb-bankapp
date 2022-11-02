@@ -3,6 +3,7 @@ import { jsx } from '@emotion/react'
 import * as Icon from '../assets/svgr'
 import IconButton from './IconButton'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { colors } from '../Colors'
 
 export default {
     title: 'components/Icon/Button/Each', // | 안 쓰도록 조심
@@ -52,18 +53,25 @@ export const CardArrow = Template.bind({})
 CardArrow.args = {
     ...templateIcon.args,
     theme: 'PAY',
+    size: 44,
     icon: <Icon.Pay.CardArrow />
 }
 export const CardRegistration = Template.bind({})
 CardRegistration.args = {
     ...templateIcon.args,
     theme: 'PAY',
+    custom: {
+        ICON_COLOR: { IDLE: colors.neutral20 }
+    },
     icon: <Icon.Pay.CardRegistration />
 }
 export const Membership = Template.bind({})
 Membership.args = {
     ...templateIcon.args,
     theme: 'PAY',
+    custom: {
+        ICON_COLOR: { IDLE: colors.neutral100 }
+    },
     icon: <Icon.Pay.Membership />
 }
 export const OnSite = Template.bind({})
@@ -82,12 +90,17 @@ export const TransferArrow = Template.bind({})
 TransferArrow.args = {
     ...templateIcon.args,
     theme: 'PAY',
+    size: 16,
     icon: <Icon.Pay.TransferArrow />
 }
 export const Vibration = Template.bind({})
 Vibration.args = {
     ...templateIcon.args,
     theme: 'PAY',
+    size: 20,
+    custom: {
+        ICON_COLOR: { IDLE: colors.neutral50 }
+    },
     icon: <Icon.Pay.Vibration />
 }
 
@@ -101,6 +114,11 @@ export const KbpickCar = Template.bind({})
 KbpickCar.args = {
     ...templateIcon.args,
     theme: 'KBPICK',
+    size: 45.5,
+    custom: {
+        ICON_COLOR: { IDLE: '#000' },
+        BD_RADIUS: 'CIRCLE'
+    },
     icon: <Icon.Kbpick.Car />
 }
 export const KbpickChat = Template.bind({})
@@ -119,6 +137,7 @@ export const KbpickMydata = Template.bind({})
 KbpickMydata.args = {
     ...templateIcon.args,
     theme: 'KBPICK',
+
     icon: <Icon.Kbpick.Mydata />
 }
 
