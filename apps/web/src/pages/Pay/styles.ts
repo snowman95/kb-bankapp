@@ -14,7 +14,7 @@ export const PayContainer = styled.div<Mobile>`
     props.isMobileView &&
     `
         height: 100vh;
-        height: calc(var(--vh) * 100 - ${HEADER_HEIGHT}px);
+        height: calc(var(--vh) * 100);
     `}
 `;
 
