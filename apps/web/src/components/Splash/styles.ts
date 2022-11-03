@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const SplashContainer = styled(motion.div)`
+export const SplashAnimationContainer = styled(motion.div)`
   position: relative;
   display: flex;
   justify-content: center;
