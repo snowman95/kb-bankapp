@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { colors, LineDrawing } from "@kb-bankapp/ui";
 import { useEffect, useRef, useState } from "react";
-import { Icon, SplashContainer } from "./styles";
+import { Icon, SplashAnimationContainer } from "./styles";
 import 리브Icon from "@src/assets/logo/logo-리브.png";
 import 보험Icon from "@src/assets/logo/logo-보험.png";
 import 부동산Icon from "@src/assets/logo/logo-부동산.png";
@@ -10,7 +10,7 @@ import 증권Icon from "@src/assets/logo/logo-증권.png";
 import 페이Icon from "@src/assets/logo/logo-페이.png";
 import { css } from "@emotion/react";
 
-export const Splash = () => {
+export const SplashAnimation = () => {
   const pathRef = useRef<SVGPathElement>(null);
   const [gp, setGp] = useState<any>();
 
@@ -36,7 +36,7 @@ export const Splash = () => {
 
   return (
     <>
-      <SplashContainer
+      <SplashAnimationContainer
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
         transition={{ ease: "easeOut", duration: 0.4, delay: 3 }}
@@ -83,7 +83,7 @@ export const Splash = () => {
           transition={{ ease: "easeOut", duration: 0.4, delay: 2.6 }}
         />
         <LineDrawing.StarSvg ref={pathRef} />
-      </SplashContainer>
+      </SplashAnimationContainer>
       <Icon
         src={은행Icon}
         alt="은행"
