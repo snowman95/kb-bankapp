@@ -234,9 +234,6 @@ const IconButton = ({
                         iconTheme.BG_COLOR.IDLE ||
                         'transparent'};
                     }
-                    ${iconTheme.BG_COLOR.IDLE
-                        ? `1px solid ${iconTheme.BG_COLOR.IDLE}`
-                        : ''};
                     ${iconTheme.BG_SHADOW
                         ? `box-shadow: ${iconTheme.BG_SHADOW}`
                         : ''};
@@ -244,6 +241,9 @@ const IconButton = ({
                         ? `border-radius: ${
                               ICON_BORDER_RADIUS_DIRECTION[iconTheme.BD_RADIUS]
                           }`
+                        : ''};
+                    ${iconTheme.BD_COLOR
+                        ? `border: 1px solid ${iconTheme.BD_COLOR}`
                         : ''};
                     ${iconTheme.DIR
                         ? `transform: rotate(${
