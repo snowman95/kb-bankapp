@@ -1,5 +1,4 @@
-import { colors, Icon } from "@kb-bankapp/ui";
-import IconButton from "../UI/Button";
+import { colors, Icon, IconButton } from "@kb-bankapp/ui";
 import { PayBox, PayContainer, Separator } from "./styles";
 
 export const PayMethod = () => {
@@ -12,12 +11,12 @@ export const PayMethod = () => {
   return (
     <PayContainer>
       <PayBox onClick={handleOnSitePayment}>
-        <IconButton icon={<Icon.Pay.OnSite />} color={colors.neutral60} />
+        <IconButton theme="PAY" icon={<Icon.Pay.OnSite />} />
         현장결제
       </PayBox>
       <Separator>|</Separator>
       <PayBox onClick={handleQRCodePayment}>
-        <IconButton icon={<Icon.Pay.QrCode />} color={colors.neutral60} />
+        <IconButton theme="PAY" icon={<Icon.Pay.QrCode />} />
         PC결제
       </PayBox>
     </PayContainer>

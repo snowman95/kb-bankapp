@@ -2,9 +2,8 @@
 import { useCallback } from "react";
 import { LeftBox, RightBox, HeaderContainer, Title } from "./styles";
 import { useTypedSelector } from "@src/lib/hooks/useStore";
-import IconButton from "@src/components/UI/Button";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Icon } from "@kb-bankapp/ui";
+import { Icon, IconButton } from "@kb-bankapp/ui";
 
 const TITLE: { [key: string]: string } = {
   "/pay": "KB Pay",
@@ -29,12 +28,25 @@ const Header = () => {
   return (
     <HeaderContainer isMobileView={isMobileView}>
       <LeftBox>
-        <IconButton rotationDir='LEFT' icon={<Icon.Header.Arrow />} onClick={goBack} />
+        <IconButton
+          theme="HEADER"
+          custom={{ DIR: "LEFT" }}
+          icon={<Icon.Header.Arrow />}
+          onClick={goBack}
+        />
         <Title>{TITLE[location.pathname]}</Title>
       </LeftBox>
       <RightBox>
-        <IconButton icon={<Icon.Header.Home />} onClick={goHome} />
-        <IconButton icon={<Icon.Header.Menu />} onClick={openMenu} />
+        <IconButton
+          theme="HEADER"
+          icon={<Icon.Header.Home />}
+          onClick={goHome}
+        />
+        <IconButton
+          theme="HEADER"
+          icon={<Icon.Header.Menu />}
+          onClick={openMenu}
+        />
       </RightBox>
     </HeaderContainer>
   );
