@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { colors, typography } from "@kb-bankapp/ui";
 import { HEADER_HEIGHT, MOBILE_WIDTH } from "@src/constants";
 import { Mobile } from "@type-default";
 
@@ -41,4 +42,20 @@ export const RightBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 12px;
+`;
+
+export const KBPayButton = styled.div`
+  display: flex;
+  align-items: center;
+
+  border: 1px solid ${colors.neutral0};
+  border-radius: 50px;
+  padding: 2px 10px 3px 7px;
+
+  width: 77px;
+  height: 25px;
+
+  white-space: nowrap;
+  font: ${typography.body03m};
+  color: ${colors.neutral0};
 `;
