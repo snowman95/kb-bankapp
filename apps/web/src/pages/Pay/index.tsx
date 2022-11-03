@@ -26,12 +26,18 @@ const Pay = () => {
         <CardSlider />
         <div>
           <PaddingContainer>
-            <EventBanner />
+            <EventBanner theme="primary2" />
           </PaddingContainer>
           <PayMethod />
           <RewardTransferText>
             <span>KB스타뱅킹 페이 리워드 이체하기</span>
-            <IconButton icon={<Icon.Pay.TransferArrow />} rotationDir="RIGHT" />
+            <IconButton
+              theme="PAY"
+              custom={{
+                DIR: "RIGHT",
+              }}
+              icon={<Icon.Pay.TransferArrow />}
+            />
           </RewardTransferText>
         </div>
       </PayContainer>
