@@ -16,9 +16,9 @@ type ColorState = {
 
 export interface THEMEprops {
     /** 아이콘 색상 설정 */
-    ICON_COLOR: ColorState
+    ICON_COLOR?: ColorState
     /** 버튼 배경 색상 설정 */
-    BG_COLOR: ColorState
+    BG_COLOR?: ColorState
     /** 버튼 그림자 설정 */
     BG_SHADOW?: string
     /** 버튼 사이즈 설정 */
@@ -130,16 +130,16 @@ const IconButton = ({
             }
         })
     }
-    const [iconColor, setIconColor] = useState(iconTheme.ICON_COLOR.IDLE)
+    const [iconColor, setIconColor] = useState(iconTheme.ICON_COLOR?.IDLE)
 
     const handleButtonDown = useCallback(
         (e: React.MouseEvent<HTMLButtonElement>) => {
             if (
                 !iconColorManualControl &&
                 !disabled &&
-                iconTheme.ICON_COLOR.PRESSED
+                iconTheme.ICON_COLOR?.PRESSED
             )
-                setIconColor(iconTheme.ICON_COLOR.PRESSED)
+                setIconColor(iconTheme.ICON_COLOR?.PRESSED)
         },
         []
     )
@@ -148,9 +148,9 @@ const IconButton = ({
             if (
                 !iconColorManualControl &&
                 !disabled &&
-                iconTheme.ICON_COLOR.IDLE
+                iconTheme.ICON_COLOR?.IDLE
             )
-                setIconColor(iconTheme.ICON_COLOR.IDLE)
+                setIconColor(iconTheme.ICON_COLOR?.IDLE)
         },
         []
     )
@@ -159,9 +159,9 @@ const IconButton = ({
             if (
                 !iconColorManualControl &&
                 !disabled &&
-                iconTheme.ICON_COLOR.HOVER
+                iconTheme.ICON_COLOR?.HOVER
             )
-                setIconColor(iconTheme.ICON_COLOR.HOVER)
+                setIconColor(iconTheme.ICON_COLOR?.HOVER)
         },
         []
     )
@@ -170,10 +170,10 @@ const IconButton = ({
             if (
                 !iconColorManualControl &&
                 !disabled &&
-                iconTheme.ICON_COLOR.HOVER &&
-                iconTheme.ICON_COLOR.IDLE
+                iconTheme.ICON_COLOR?.HOVER &&
+                iconTheme.ICON_COLOR?.IDLE
             ) {
-                setIconColor(iconTheme.ICON_COLOR.IDLE)
+                setIconColor(iconTheme.ICON_COLOR?.IDLE)
             }
         },
         []
@@ -183,8 +183,8 @@ const IconButton = ({
         if (!iconColorManualControl) {
             setIconColor(
                 disabled
-                    ? iconTheme.ICON_COLOR.DISABLED
-                    : iconTheme.ICON_COLOR.IDLE
+                    ? iconTheme.ICON_COLOR?.DISABLED
+                    : iconTheme.ICON_COLOR?.IDLE
             )
         }
     }, [disabled])
@@ -215,23 +215,23 @@ const IconButton = ({
                     padding: 0;
 
                     // custom style
-                    background-color: ${iconTheme.BG_COLOR.IDLE
-                        ? iconTheme.BG_COLOR.IDLE
+                    background-color: ${iconTheme.BG_COLOR?.IDLE
+                        ? iconTheme.BG_COLOR?.IDLE
                         : 'transparent'};
                     &:hover {
-                        background-color: ${iconTheme.BG_COLOR.HOVER ||
-                        iconTheme.BG_COLOR.IDLE ||
+                        background-color: ${iconTheme.BG_COLOR?.HOVER ||
+                        iconTheme.BG_COLOR?.IDLE ||
                         'transparent'};
                     }
                     &:active {
-                        background-color: ${iconTheme.BG_COLOR.PRESSED ||
-                        iconTheme.BG_COLOR.IDLE ||
+                        background-color: ${iconTheme.BG_COLOR?.PRESSED ||
+                        iconTheme.BG_COLOR?.IDLE ||
                         'transparent'};
                     }
                     &:disabled {
                         cursor: not-allowed;
-                        background-color: ${iconTheme.BG_COLOR.DISABLED ||
-                        iconTheme.BG_COLOR.IDLE ||
+                        background-color: ${iconTheme.BG_COLOR?.DISABLED ||
+                        iconTheme.BG_COLOR?.IDLE ||
                         'transparent'};
                     }
                     ${iconTheme.BG_SHADOW
