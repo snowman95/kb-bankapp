@@ -32,7 +32,6 @@ const LandingContainer = styled.div<Mobile>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
 
   font: ${(props) => props.theme.textStyle.title01};
   width: 100%;
