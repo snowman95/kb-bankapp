@@ -49,6 +49,8 @@ export const AssetHomeContent = styled.div`
 `;
 
 export const AssetHomeBody = styled.div`
+  cursor: pointer;
+
   display: flex;
   flex-direction: column;
 
@@ -56,6 +58,10 @@ export const AssetHomeBody = styled.div`
   margin-left: 7px;
   border-radius: 8px;
   padding: 20px 16px 30px 16px;
+
+  :hover {
+    opacity: 0.9;
+  }
 `;
 
 export const AssetHomeBodyLabelContainer = styled.div`

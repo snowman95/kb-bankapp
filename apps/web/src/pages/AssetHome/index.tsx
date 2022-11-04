@@ -21,13 +21,33 @@ import {
 } from "./styles";
 import { Service } from "@src/components/Asset/Service";
 import Bear from "@src/assets/character/bear.png";
+import { useState } from "react";
+import { Survey } from "@src/components/Asset/Survey";
+import { AnimatedFullFrame } from "@src/styles/theme/motions";
+import { AnimatePresence } from "framer-motion";
 
 const AssetHome = () => {
   const isMobileView = useTypedSelector(
     (state) => state.settingStore.isMobileView
   );
+  const [openModal, setOpenModal] = useState<boolean>(false);
+
+  const handleClick = () => {
+    setOpenModal(true);
+  };
+  const closeModal = () => {
+    setOpenModal(false);
+  };
+
   return (
     <AssetHomeContainer isMobileView={isMobileView}>
+      {openModal ? (
+        <AnimatedFullFrame>
+          <Survey onCloseCallback={closeModal} />
+        </AnimatedFullFrame>
+      ) : (
+        <></>
+      )}
       <Header />
       <ScrollArea>
         <AssetHomeTitleContainer>
@@ -48,7 +68,7 @@ const AssetHome = () => {
           </AssetHomeTitleBox>
           <img src={Bear} alt={"bear"} width={87} height={78} />
         </AssetHomeTitleContainer>
-        <AssetHomeBody>
+        <AssetHomeBody onClick={handleClick}>
           <AssetHomeBodyLabelContainer>
             <AssetHomeBodyLabelFor>for</AssetHomeBodyLabelFor>
             <AssetHomeBodyLabelBox>
