@@ -24,7 +24,6 @@ import Bear from "@src/assets/character/bear.png";
 import { useState } from "react";
 import { Survey } from "@src/components/Asset/Survey";
 import { AnimatedFullFrame } from "@src/styles/theme/motions";
-import { AnimatePresence } from "framer-motion";
 
 const AssetHome = () => {
   const isMobileView = useTypedSelector(

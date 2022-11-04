@@ -11,8 +11,16 @@ import {
   CarDummy,
 } from "./styles";
 import { Icon, IconButton } from "@kb-bankapp/ui";
+import { useNavigate } from "react-router-dom";
+import { useCallback } from "react";
 
 export const KBPick = () => {
+  const navigate = useNavigate();
+
+  const openMydataPage = useCallback(() => {
+    navigate("/assetHome");
+  }, [navigate]);
+
   return (
     <KBPickContainer>
       <KBPickTabs>
@@ -32,7 +40,7 @@ export const KBPick = () => {
           <IconButton theme="KBPICK" icon={<Icon.Kbpick.FinancialProducts />} />
           금융상품
         </MenuBox>
-        <MenuBox>
+        <MenuBox onClick={openMydataPage}>
           <IconButton theme="KBPICK" icon={<Icon.Kbpick.Mydata />} />
           자산관리
         </MenuBox>

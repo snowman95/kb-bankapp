@@ -27,7 +27,7 @@ export const ScrollArea = styled.div`
 export const AssetHomeTitleContainer = styled.div`
   display: flex;
   gap: 8px;
-  padding: 16px 0px 20px 8px;
+  padding: 0 0 20px 8px;
 `;
 export const AssetHomeTitleBox = styled.div`
   display: flex;
