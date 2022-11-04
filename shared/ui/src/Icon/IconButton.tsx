@@ -32,7 +32,13 @@ export interface THEMEprops {
 }
 
 export const THEME: {
-    [key in 'CUSTOM' | 'HEADER' | 'PAY' | 'KBPICK' | 'STAR']: THEMEprops
+    [key in
+        | 'CUSTOM'
+        | 'HEADER'
+        | 'PAY'
+        | 'KBPICK'
+        | 'STAR'
+        | 'CHAT']: THEMEprops
 } = {
     CUSTOM: {
         ICON_COLOR: {
@@ -84,6 +90,15 @@ export const THEME: {
         BG_COLOR: {},
         SIZE: 'TINY',
         BD_RADIUS: 'ALL',
+        DIR: 'UP'
+    },
+    CHAT: {
+        ICON_COLOR: {
+            IDLE: colors.neutral60,
+            DISABLED: colors.neutral95
+        },
+        BG_COLOR: {},
+        SIZE: 'SMALL',
         DIR: 'UP'
     }
 }

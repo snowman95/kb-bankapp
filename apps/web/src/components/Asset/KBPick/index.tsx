@@ -21,6 +21,10 @@ export const KBPick = () => {
     navigate("/assetHome");
   }, [navigate]);
 
+  const openChatbotPage = useCallback(() => {
+    navigate("/chatbot");
+  }, [navigate]);
+
   return (
     <KBPickContainer>
       <KBPickTabs>
@@ -44,7 +48,7 @@ export const KBPick = () => {
           <IconButton theme="KBPICK" icon={<Icon.Kbpick.Mydata />} />
           자산관리
         </MenuBox>
-        <MenuBox>
+        <MenuBox onClick={openChatbotPage}>
           <IconButton theme="KBPICK" icon={<Icon.Kbpick.Chat />} />
           챗봇/상담
         </MenuBox>

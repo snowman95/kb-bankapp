@@ -1,3 +1,4 @@
+export * as Chat from './chat'
 export * as Header from './header'
 export * as Kbpick from './kbpick'
 export * as Pay from './pay'

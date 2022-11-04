@@ -14,6 +14,7 @@ import { PaymentDone } from "./pages/Pay/PaymentDone";
 import Landing from "./pages/Landing";
 import AssetHome from "./pages/AssetHome";
 import AIService from "./pages/AIService";
+import Chatbot from "./pages/Chatbot";
 
 function App() {
   const location = useLocation();
@@ -40,6 +41,7 @@ function App() {
               <Route path="/home" element={<Landing />} />
               <Route path="/assetHome" element={<AssetHome />} />
               <Route path="/aiService" element={<AIService />} />
+              <Route path="/chatbot" element={<Chatbot />} />
               <Route path="*" element={<div>error page</div>}></Route>
             </Routes>
           </ResponsiveWrapper>
