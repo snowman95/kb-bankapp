@@ -13,13 +13,13 @@ import Header from "@src/components/Layout/Header";
 import { IconButton, Icon } from "@kb-bankapp/ui";
 
 const Pay = () => {
-  const isMobilveView = useTypedSelector(
+  const isMobileView = useTypedSelector(
     (state) => state.settingStore.isMobileView
   );
   return (
     <>
       <Header />
-      <PayContainer isMobileView={isMobilveView}>
+      <PayContainer isMobileView={isMobileView}>
         <VibrationContainer>
           <Vibration />
         </VibrationContainer>
