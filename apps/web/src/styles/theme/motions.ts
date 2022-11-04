@@ -30,7 +30,7 @@ export const AnimatedFullFrame = styled(motion.div)`
   left: 0;
   z-index: 1000;
 
-  background: rgba(51, 61, 74, 0.5);
+  background: rgba(28, 27, 31, 0.6);
 `;
 AnimatedFullFrame.defaultProps = {
   variants: variants.fadeIn,
