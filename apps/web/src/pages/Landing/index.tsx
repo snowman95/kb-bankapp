@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
-import { Splash } from "@src/components/Splash";
-import { HEADER_HEIGHT } from "@src/constants";
+import { AccountSlider } from "@src/components/Asset/AccountSlider";
+import { BannerBox } from "@src/components/Asset/BannerBox";
+import { KBPick } from "@src/components/Asset/KBPick";
+import { MyAsset } from "@src/components/Asset/MyAsset";
+import { User } from "@src/components/Asset/User";
+import KBPayHeader from "@src/components/Layout/Header/KBPayHeader";
 import { useTypedSelector } from "@src/lib/hooks/useStore";
 import { Mobile } from "@type-default";
 
@@ -8,10 +12,16 @@ const Landing = () => {
   const isMobileView = useTypedSelector(
     (state) => state.settingStore.isMobileView
   );
-
   return (
     <LandingContainer isMobileView={isMobileView}>
-      <Splash />
+      <KBPayHeader />
+      <ScrollArea>
+        <User />
+        <AccountSlider />
+        <BannerBox />
+        <MyAsset />
+        <KBPick />
+      </ScrollArea>
     </LandingContainer>
   );
 };
@@ -22,10 +32,8 @@ const LandingContainer = styled.div<Mobile>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
 
   font: ${(props) => props.theme.textStyle.title01};
-  padding: 24px;
   width: 100%;
   height: 100vh;
 
@@ -33,6 +41,12 @@ const LandingContainer = styled.div<Mobile>`
     props.isMobileView &&
     `
         height: 100vh;
-        height: calc(var(--vh) * 100 - ${HEADER_HEIGHT}px);
+        height: calc(var(--vh) * 100);
     `}
+`;
+
+const ScrollArea = styled.div`
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
 `;

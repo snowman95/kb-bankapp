@@ -13,25 +13,31 @@ import Header from "@src/components/Layout/Header";
 import { IconButton, Icon } from "@kb-bankapp/ui";
 
 const Pay = () => {
-  const isMobilveView = useTypedSelector(
+  const isMobileView = useTypedSelector(
     (state) => state.settingStore.isMobileView
   );
   return (
     <>
       <Header />
-      <PayContainer isMobileView={isMobilveView}>
+      <PayContainer isMobileView={isMobileView}>
         <VibrationContainer>
           <Vibration />
         </VibrationContainer>
         <CardSlider />
         <div>
           <PaddingContainer>
-            <EventBanner />
+            <EventBanner theme="primary2" />
           </PaddingContainer>
           <PayMethod />
           <RewardTransferText>
             <span>KB스타뱅킹 페이 리워드 이체하기</span>
-            <IconButton icon={<Icon.Pay.TransferArrow />} rotationDir="RIGHT" />
+            <IconButton
+              theme="PAY"
+              custom={{
+                DIR: "RIGHT",
+              }}
+              icon={<Icon.Pay.TransferArrow />}
+            />
           </RewardTransferText>
         </div>
       </PayContainer>

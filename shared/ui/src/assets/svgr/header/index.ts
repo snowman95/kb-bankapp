@@ -1,3 +1,8 @@
+export { default as Alert } from './Alert'
 export { default as Arrow } from './Arrow'
+export { default as Close } from './Close'
 export { default as Home } from './Home'
 export { default as Menu } from './Menu'
+export { default as Search } from './Search'
+export { default as Wallet } from './Wallet'
+export { default as ZoomOut } from './ZoomOut'

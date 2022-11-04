@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { colors, typography } from "@kb-bankapp/ui";
-import { HEADER_HEIGHT } from "@src/constants";
 import { Mobile } from "@type-default";
 
 export const PayContainer = styled.div<Mobile>`
@@ -14,7 +13,7 @@ export const PayContainer = styled.div<Mobile>`
     props.isMobileView &&
     `
         height: 100vh;
-        height: calc(var(--vh) * 100 - ${HEADER_HEIGHT}px);
+        height: calc(var(--vh) * 100);
     `}
 `;
 

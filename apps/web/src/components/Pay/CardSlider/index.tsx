@@ -1,13 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import IconButton from "../../UI/Button";
 import {
   animate,
   MotionValue,
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import theme from "@src/styles/theme";
 import {
   CardBox,
   CardContainer,
@@ -19,7 +17,7 @@ import {
 } from "./styles";
 import CardGoodDay from "@assets/card/card-gooday.png";
 import CardTitanium from "@assets/card/card-titanium.png";
-import { colors, Icon } from "@kb-bankapp/ui";
+import { colors, Icon, IconButton } from "@kb-bankapp/ui";
 
 const CARD_COUNT = 3;
 const SPACE = 82 * (CARD_COUNT - 1);
@@ -28,10 +26,15 @@ export const CardSlider = () => {
   return (
     <CardContainer>
       <IconButton
+        theme="PAY"
         icon={<Icon.Pay.CardArrow />}
-        size={"MEDIUM"}
-        color={theme.color.neutral90}
-        rotationDir="LEFT"
+        custom={{
+          ICON_COLOR: {
+            IDLE: colors.neutral90,
+          },
+          SIZE: "MEDIUM",
+          DIR: "LEFT",
+        }}
         emotionCss={css`
           z-index: 1;
           position: absolute;
@@ -42,10 +45,15 @@ export const CardSlider = () => {
         }}
       />
       <IconButton
+        theme="PAY"
         icon={<Icon.Pay.CardArrow />}
-        size={"MEDIUM"}
-        color={theme.color.neutral60}
-        rotationDir="RIGHT"
+        custom={{
+          ICON_COLOR: {
+            IDLE: colors.neutral60,
+          },
+          SIZE: "MEDIUM",
+          DIR: "RIGHT",
+        }}
         emotionCss={css`
           z-index: 1;
           position: absolute;
@@ -84,8 +92,13 @@ export const CardManagement = ({ x }: { x: MotionValue<number> }) => {
       </CardTitle>
       <CardRegistrationBox>
         <IconButton
+          theme="PAY"
           icon={<Icon.Pay.CardRegistration />}
-          color={colors.neutral20}
+          custom={{
+            ICON_COLOR: {
+              IDLE: colors.neutral20,
+            },
+          }}
         />
         <CardRegistrationText>결제수단 관리</CardRegistrationText>
       </CardRegistrationBox>
