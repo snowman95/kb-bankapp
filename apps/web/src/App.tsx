@@ -12,6 +12,7 @@ import Splash from "./pages/Splash";
 import OnSitePay from "./pages/Pay/OnSite";
 import { PaymentDone } from "./pages/Pay/PaymentDone";
 import Landing from "./pages/Landing";
+import AssetHome from "./pages/AssetHome";
 
 function App() {
   const location = useLocation();
@@ -36,6 +37,7 @@ function App() {
               <Route path="/pay/done/1" element={<PaymentDone page="1" />} />
               <Route path="/pay/done/2" element={<PaymentDone page="2" />} />
               <Route path="/home" element={<Landing />} />
+              <Route path="/assetHome" element={<AssetHome />} />
               <Route path="*" element={<div>error page</div>}></Route>
             </Routes>
           </ResponsiveWrapper>
