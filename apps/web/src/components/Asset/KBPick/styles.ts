@@ -46,6 +46,7 @@ export const MenuContainer = styled.div`
 `;
 
 export const MenuBox = styled.div`
+  cursor: pointer;
   position: relative;
   display: flex;
   flex-direction: column;
