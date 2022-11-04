@@ -7,7 +7,7 @@ import { Icon, IconButton } from "@kb-bankapp/ui";
 
 const TITLE: { [key: string]: string } = {
   "/pay": "KB Pay",
-  "/ai": "AI맞춤서비스",
+  "/assetHome": "자산홈",
 };
 
 const Header = () => {
