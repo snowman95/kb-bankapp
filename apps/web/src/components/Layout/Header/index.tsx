@@ -9,6 +9,7 @@ const TITLE: { [key: string]: string } = {
   "/pay": "KB Pay",
   "/assetHome": "자산홈",
   "/aiService": "AI맞춤서비스",
+  "/chatbot": "챗봇/상담",
 };
 
 const Header = () => {
@@ -38,16 +39,33 @@ const Header = () => {
         <Title>{TITLE[location.pathname]}</Title>
       </LeftBox>
       <RightBox>
-        <IconButton
-          theme="HEADER"
-          icon={<Icon.Header.Home />}
-          onClick={goHome}
-        />
-        <IconButton
-          theme="HEADER"
-          icon={<Icon.Header.Menu />}
-          onClick={openMenu}
-        />
+        {location.pathname === "/chatbot" ? (
+          <>
+            <IconButton
+              theme="HEADER"
+              icon={<Icon.Header.ZoomOut />}
+              onClick={openMenu}
+            />
+            <IconButton
+              theme="HEADER"
+              icon={<Icon.Header.Close />}
+              onClick={goHome}
+            />
+          </>
+        ) : (
+          <>
+            <IconButton
+              theme="HEADER"
+              icon={<Icon.Header.Home />}
+              onClick={goHome}
+            />
+            <IconButton
+              theme="HEADER"
+              icon={<Icon.Header.Menu />}
+              onClick={openMenu}
+            />
+          </>
+        )}
       </RightBox>
     </HeaderContainer>
   );
