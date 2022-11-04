@@ -8,6 +8,7 @@ import { Icon, IconButton } from "@kb-bankapp/ui";
 const TITLE: { [key: string]: string } = {
   "/pay": "KB Pay",
   "/assetHome": "자산홈",
+  "/aiService": "AI맞춤서비스",
 };
 
 const Header = () => {
@@ -21,7 +22,7 @@ const Header = () => {
     navigate(-1);
   }, [navigate]);
   const goHome = useCallback(() => {
-    navigate("/");
+    navigate("/home");
   }, [navigate]);
   const openMenu = useCallback(() => {}, []);
 
