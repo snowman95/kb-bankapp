@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { colors, typography } from "@kb-bankapp/ui";
-import { HEADER_HEIGHT } from "@src/constants";
 import { Mobile } from "@type-default";
 
 export const PayContainer = styled.div<Mobile>`

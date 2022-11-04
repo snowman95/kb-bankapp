@@ -5,7 +5,6 @@ import { KBPick } from "@src/components/Asset/KBPick";
 import { MyAsset } from "@src/components/Asset/MyAsset";
 import { User } from "@src/components/Asset/User";
 import KBPayHeader from "@src/components/Layout/Header/KBPayHeader";
-import { HEADER_HEIGHT } from "@src/constants";
 import { useTypedSelector } from "@src/lib/hooks/useStore";
 import { Mobile } from "@type-default";
 
@@ -14,7 +13,7 @@ const Landing = () => {
     (state) => state.settingStore.isMobileView
   );
   return (
-    <AssetHomeContainer isMobileView={isMobileView}>
+    <LandingContainer isMobileView={isMobileView}>
       <KBPayHeader />
       <ScrollArea>
         <User />
@@ -23,12 +22,12 @@ const Landing = () => {
         <MyAsset />
         <KBPick />
       </ScrollArea>
-    </AssetHomeContainer>
+    </LandingContainer>
   );
 };
 export default Landing;
 
-const AssetHomeContainer = styled.div<Mobile>`
+const LandingContainer = styled.div<Mobile>`
   display: flex;
   flex-direction: column;
   justify-content: center;
