@@ -1,6 +1,5 @@
 import { useTypedSelector } from "@src/lib/hooks/useStore";
 import Header from "@src/components/Layout/Header";
-import { IconButton, Icon } from "@kb-bankapp/ui";
 import {
   AIServiceBody,
   AIServiceBodyContent,
