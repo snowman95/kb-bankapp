@@ -49,7 +49,7 @@ export const ButtonGroup = styled.div`
   padding-top: 8px;
   margin-top: 10px;
 `;
-export const YesButton = styled.button`
+export const YesButton = styled.button<{ isActive: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,10 +61,13 @@ export const YesButton = styled.button`
   width: 80px;
   height: 32px;
 
+  ${(props) => props.isActive && ` background: ${colors.primary1};`}
+
   :hover {
     opacity: 0.9;
   }
 `;
 export const NoButton = styled(YesButton)`
   background: ${colors.neutral90};
+  ${(props) => props.isActive && ` background: ${colors.primary1};`}
 `;
