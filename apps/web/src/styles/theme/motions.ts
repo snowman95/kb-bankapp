@@ -6,6 +6,7 @@ export const variants = {
   fadeIn: {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
+    exit: { opacity: 0 },
   },
 };
 export const AnimatedFrame = styled(motion.div)`
@@ -16,6 +17,7 @@ AnimatedFrame.defaultProps = {
   variants: variants.fadeIn,
   initial: "initial",
   animate: "animate",
+  exit: "exit",
 };
 
 export const AnimatedFullFrame = styled(motion.div)`
