@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import {
+  BlurBox,
   CooperationColBox,
   CooperationContainer,
   CooperationRowBox,
@@ -42,19 +43,29 @@ export const Cooperation = () => {
       <CooperationContainer>
         <CooperationTitle>온라인결제</CooperationTitle>
         <CooperationColBox>
-          <CooperationRowBox>
-            {images[1].map((src) => (
-              <Logo key={src} src={src} alt="" />
+          <BlurBox />
+          <CooperationRowBox
+            animate={{ x: [0, -550] }}
+            transition={{ duration: 2 }}
+          >
+            {[...images[1], ...images[1]].map((src, index) => (
+              <Logo key={`${src}_${index}`} src={src} alt="" />
             ))}
           </CooperationRowBox>
-          <CooperationRowBox>
-            {images[2].map((src) => (
-              <Logo key={src} src={src} alt="" />
+          <CooperationRowBox
+            animate={{ x: [0, -550] }}
+            transition={{ duration: 2 }}
+          >
+            {[...images[2], ...images[2]].map((src, index) => (
+              <Logo key={`${src}_${index}`} src={src} alt="" />
             ))}
           </CooperationRowBox>
-          <CooperationRowBox>
-            {images[3].map((src) => (
-              <Logo key={src} src={src} alt="" />
+          <CooperationRowBox
+            animate={{ x: [0, -550] }}
+            transition={{ duration: 2 }}
+          >
+            {[...images[3], ...images[3]].map((src, index) => (
+              <Logo key={`${src}_${index}`} src={src} alt="" />
             ))}
           </CooperationRowBox>
         </CooperationColBox>
@@ -62,10 +73,15 @@ export const Cooperation = () => {
 
       <CooperationContainer>
         <CooperationTitle>오프라인 결제</CooperationTitle>
-        <CooperationRowBox>
-          {images[4].map((src) => (
-            <Logo key={src} src={src} alt="" />
-          ))}
+        <CooperationRowBox
+          animate={{ x: [0, -550] }}
+          transition={{ duration: 2 }}
+        >
+          {[...images[4], ...images[4], ...images[4], ...images[4]].map(
+            (src, index) => (
+              <Logo key={`${src}_${index}`} src={src} alt="" />
+            )
+          )}
         </CooperationRowBox>
       </CooperationContainer>
     </CooperationTotalContainer>

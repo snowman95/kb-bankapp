@@ -23,13 +23,13 @@ export const AlignBox = styled.div`
 export const AIChatBubbleTail = styled.div`
   z-index: -1;
   position: absolute;
-  bottom: -8px;
+  bottom: -7px;
   left: -8px;
 `;
 export const AIChatBubbleRightTail = styled.div`
   z-index: -1;
   position: absolute;
-  bottom: -8px;
+  bottom: -7px;
   right: -8px;
   transform: scaleX(-1);
 `;

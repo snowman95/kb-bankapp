@@ -3,11 +3,23 @@ import { SplashAnimation } from "@src/components/Splash";
 import { HEADER_HEIGHT } from "@src/constants";
 import { useTypedSelector } from "@src/lib/hooks/useStore";
 import { Mobile } from "@type-default";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Splash = () => {
+  const navigate = useNavigate();
+
   const isMobileView = useTypedSelector(
     (state) => state.settingStore.isMobileView
   );
+
+  useEffect(() => {
+    const timeId = setTimeout(() => {
+      navigate("/pay");
+    }, 4000);
+
+    return () => clearTimeout(timeId);
+  }, [navigate]);
 
   return (
     <SplashContainer isMobileView={isMobileView}>

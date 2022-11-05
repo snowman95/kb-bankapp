@@ -22,6 +22,7 @@ export const CardCraousel = styled(motion.div)`
 `;
 
 export const CardBox = styled(motion.div)`
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,8 +30,8 @@ export const CardBox = styled(motion.div)`
   background: #edf1f9;
   border-radius: 8px;
 
-  width: 140px;
-  height: 227px;
+  width: 165px;
+  height: 266px;
 `;
 
 export const CardRegistrationBox = styled.div`
