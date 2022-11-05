@@ -14,7 +14,6 @@ import { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 
 const CardSlideDuration = 1;
-const WaveDelay = 0.5;
 
 export const OnSitePayment = () => {
   const [countdown, setCountdown] = useState(60 + CardSlideDuration);
@@ -41,18 +40,15 @@ export const OnSitePayment = () => {
               css={css`
                 filter: blur(2px);
               `}
-              initial={{ scale: 0 }}
-              animate={{ scale: 6.2 }}
+              animate={{ scale: [1, 1.2, 1] }}
               transition={{
-                duration: 2 - WaveDelay,
+                duration: 1,
                 repeat: Infinity,
-                repeatDelay: WaveDelay,
               }}
             />
             <Wave
-              initial={{ scale: 0 }}
-              animate={{ scale: 5.8 }}
-              transition={{ duration: 2, repeat: Infinity }}
+              animate={{ scale: [0.9, 1.1, 0.9] }}
+              transition={{ duration: 1, repeat: Infinity }}
             />
           </>
         ) : (

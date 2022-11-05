@@ -54,6 +54,7 @@ export const Info = styled.span`
 
 export const Wave = styled(motion.div)`
   position: absolute;
+  top: -50px;
   border-radius: 50%;
   background: radial-gradient(
     85.34% 85.34% at 50% 23.68%,
@@ -62,6 +63,6 @@ export const Wave = styled(motion.div)`
     rgba(255, 255, 255, 0.15) 96.35%
   );
 
-  width: 100px;
-  height: 100px;
+  width: 416px;
+  height: 416px;
 `;
