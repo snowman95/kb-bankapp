@@ -78,7 +78,6 @@ const Chatbot = () => {
     setInputs((prev) => [...prev, "주변 ATM 을 찾아줘"]);
   };
   useEffect(() => {
-    console.log("inputs", inputs);
     if (!scrollBox.current) return;
     scrollBox.current.scrollTop = scrollBox.current.scrollHeight;
   }, [scrollBox, inputs]);
