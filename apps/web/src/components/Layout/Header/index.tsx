@@ -20,8 +20,12 @@ const Header = () => {
   );
 
   const goBack = useCallback(() => {
-    navigate(-1);
-  }, [navigate]);
+    if (location.pathname === "/aiService") {
+      navigate("/assetHome");
+      return;
+    }
+    navigate("/home");
+  }, [location, navigate]);
   const goHome = useCallback(() => {
     navigate("/home");
   }, [navigate]);
