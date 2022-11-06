@@ -158,6 +158,6 @@ export const AssetHomeBlurFilter = styled.div`
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(2.5px);
-  width: 328px;
+  width: 360px;
   height: 403px;
 `;
