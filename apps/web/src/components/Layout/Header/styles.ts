@@ -45,6 +45,7 @@ export const RightBox = styled.div`
 `;
 
 export const KBPayButton = styled.div`
+  cursor: pointer;
   display: flex;
   align-items: center;
 

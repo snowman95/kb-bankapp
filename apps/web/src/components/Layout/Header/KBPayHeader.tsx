@@ -8,23 +8,23 @@ import {
   KBPayButton,
 } from "./styles";
 import { useTypedSelector } from "@src/lib/hooks/useStore";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { colors, Icon, IconButton } from "@kb-bankapp/ui";
 
 const TITLE: { [key: string]: string } = {
   "/pay": "KB Pay",
-  "/ai": "AI맞춤서비스",
 };
 
 const KBPayHeader = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const isMobileView = useTypedSelector(
     (state) => state.settingStore.isMobileView
   );
 
   const handleKBPayClick = useCallback(() => {
-    console.log("kb pay click");
-  }, []);
+    navigate("/pay");
+  }, [navigate]);
   const handleWalletClick = useCallback(() => {
     console.log("kb wallet click");
   }, []);
@@ -41,11 +41,10 @@ const KBPayHeader = () => {
   return (
     <HeaderContainer isMobileView={isMobileView}>
       <LeftBox>
-        <KBPayButton>
+        <KBPayButton onClick={handleKBPayClick}>
           <IconButton
             theme="PAY"
             icon={<Icon.Pay.Membership />}
-            onClick={handleKBPayClick}
             size={20}
             custom={{
               ICON_COLOR: {
