@@ -49,18 +49,46 @@ export const AssetHomeContent = styled.div`
 `;
 
 export const AssetHomeBody = styled.div`
-  cursor: pointer;
-
   display: flex;
   flex-direction: column;
 
-  background: #f6f1e6;
-  margin-left: 7px;
   border-radius: 8px;
-  padding: 20px 16px 30px 16px;
+  padding-right: 8px;
+`;
 
+export const AssetHomeMyTypeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 8px;
+  background: #f6f1e6;
+  padding: 20px 15px;
+  font: ${typography.body02r};
+  font-weight: 300;
+  font-weight: 350;
+  line-height: 100%;
+`;
+export const AssetHomeMyTypeTitle = styled.div`
+  color: ${colors.neutral0};
+  font: ${typography.h02};
+  font-weight: 700;
+`;
+export const AssetHomeBodyMyTypeBox = styled.div`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 12px 0 16px 0;
+  border-radius: 50px;
+  border: 1px solid ${colors.neutral60};
+  padding: 10px 12px;
+
+  width: fit-content;
+  color: ${colors.neutral0};
+  font: ${typography.title03};
   :hover {
-    opacity: 0.9;
+    opacity: 0.8;
   }
 `;
 
@@ -68,6 +96,8 @@ export const AssetHomeBodyLabelContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 6px;
+
+  margin-top: 32px;
 `;
 
 export const AssetHomeBodyLabelBox = styled.div`
@@ -113,4 +143,21 @@ export const ServiceContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+`;
+
+export const AssetHomeBlurBox = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+`;
+export const AssetHomeBlurFilter = styled.div`
+  z-index: 50;
+
+  position: absolute;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(2.5px);
+  width: 328px;
+  height: 403px;
 `;
