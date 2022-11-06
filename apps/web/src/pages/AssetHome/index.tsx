@@ -2,16 +2,21 @@ import { useTypedSelector } from "@src/lib/hooks/useStore";
 import Header from "@src/components/Layout/Header";
 import { IconButton, Icon } from "@kb-bankapp/ui";
 import {
+  AssetHomeBlurBox,
+  AssetHomeBlurFilter,
   AssetHomeBody,
   AssetHomeBodyContent,
   AssetHomeBodyLabel,
   AssetHomeBodyLabelBox,
   AssetHomeBodyLabelContainer,
   AssetHomeBodyLabelFor,
+  AssetHomeBodyMyTypeBox,
   AssetHomeBodyTitle,
   AssetHomeBodyTitleBox,
   AssetHomeContainer,
   AssetHomeContent,
+  AssetHomeMyTypeContainer,
+  AssetHomeMyTypeTitle,
   AssetHomeTitle,
   AssetHomeTitleBox,
   AssetHomeTitleContainer,
@@ -67,26 +72,36 @@ const AssetHome = () => {
           </AssetHomeTitleBox>
           <img src={Bear} alt={"bear"} width={87} height={78} />
         </AssetHomeTitleContainer>
-        <AssetHomeBody onClick={handleClick}>
-          <AssetHomeBodyLabelContainer>
-            <AssetHomeBodyLabelFor>for</AssetHomeBodyLabelFor>
-            <AssetHomeBodyLabelBox>
-              <AssetHomeBodyLabel>#액티브시니어</AssetHomeBodyLabel>
-            </AssetHomeBodyLabelBox>
-          </AssetHomeBodyLabelContainer>
-          <AssetHomeBodyTitleBox>
-            <AssetHomeBodyTitle>
-              젊은, 액티브시니어, 인생 2막을 위한 자산관리
-            </AssetHomeBodyTitle>
-            <AssetHomeBodyContent>
-              소득의 절반은 무조건 저축! 재테크 공부도 열심히
-            </AssetHomeBodyContent>
-          </AssetHomeBodyTitleBox>
-          <ServiceContainer>
-            <Service theme="기본" type="경제상식" />
-            <Service theme="기본" type="보험" />
-            <Service theme="기본" type="주식리포트" />
-          </ServiceContainer>
+        <AssetHomeBody>
+          <AssetHomeMyTypeContainer>
+            <AssetHomeMyTypeTitle>나의 자산관리 유형은?</AssetHomeMyTypeTitle>
+            <AssetHomeBodyMyTypeBox onClick={handleClick}>
+              설문조사
+            </AssetHomeBodyMyTypeBox>
+            <span>자산관리 유형을 추가하거나 바꿔보세요.</span>
+          </AssetHomeMyTypeContainer>
+
+          <AssetHomeBlurBox>
+            <AssetHomeBlurFilter />
+            <AssetHomeBodyLabelContainer>
+              <AssetHomeBodyLabelFor>for</AssetHomeBodyLabelFor>
+              <AssetHomeBodyLabelBox>
+                <AssetHomeBodyLabel>#액티브시니어</AssetHomeBodyLabel>
+              </AssetHomeBodyLabelBox>
+            </AssetHomeBodyLabelContainer>
+            <AssetHomeBodyTitleBox>
+              <AssetHomeBodyTitle>
+                다가오는 은퇴시기, 커져가는 나의 자산
+              </AssetHomeBodyTitle>
+              <AssetHomeBodyContent>
+                즐거운 인생2막을 위한 자산관리의 필요성
+              </AssetHomeBodyContent>
+            </AssetHomeBodyTitleBox>
+            <ServiceContainer>
+              <Service theme="서비스" type="경제상식" />
+              <Service theme="서비스" type="주식리포트" />
+            </ServiceContainer>
+          </AssetHomeBlurBox>
         </AssetHomeBody>
       </ScrollArea>
     </AssetHomeContainer>
