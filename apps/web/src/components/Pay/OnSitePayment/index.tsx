@@ -13,11 +13,10 @@ import CardTitanium from "@assets/card/card-titanium.png";
 import { useEffect, useState } from "react";
 import { css } from "@emotion/react";
 
-const CardSlideDuration = 1;
-const WaveDelay = 0.5;
+const CardSlideDuration = 0.2;
 
 export const OnSitePayment = () => {
-  const [countdown, setCountdown] = useState(60 + CardSlideDuration);
+  const [countdown, setCountdown] = useState(60);
 
   useEffect(() => {
     if (countdown === 0) return;
@@ -41,18 +40,15 @@ export const OnSitePayment = () => {
               css={css`
                 filter: blur(2px);
               `}
-              initial={{ scale: 0 }}
-              animate={{ scale: 6.2 }}
+              animate={{ opacity: [0, 1, 0], scale: [1, 1.2, 1] }}
               transition={{
-                duration: 2 - WaveDelay,
+                duration: 1,
                 repeat: Infinity,
-                repeatDelay: WaveDelay,
               }}
             />
             <Wave
-              initial={{ scale: 0 }}
-              animate={{ scale: 5.8 }}
-              transition={{ duration: 2, repeat: Infinity }}
+              animate={{ opacity: [0, 1, 0], scale: [0.9, 1.1, 0.9] }}
+              transition={{ duration: 1, repeat: Infinity }}
             />
           </>
         ) : (
@@ -62,7 +58,7 @@ export const OnSitePayment = () => {
           src={CardTitanium}
           width="178px"
           height="288px"
-          initial={{ opacity: 0, y: 2000 }}
+          initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: CardSlideDuration }}
         />

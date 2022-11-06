@@ -18,9 +18,10 @@ import {
 import CardGoodDay from "@assets/card/card-gooday.png";
 import CardTitanium from "@assets/card/card-titanium.png";
 import { colors, Icon, IconButton } from "@kb-bankapp/ui";
+import { useNavigate } from "react-router-dom";
 
 const CARD_COUNT = 3;
-const SPACE = 82 * (CARD_COUNT - 1);
+const SPACE = 95 * (CARD_COUNT - 1);
 export const CardSlider = () => {
   const x = useMotionValue(SPACE);
   return (
@@ -113,6 +114,11 @@ interface CardProps {
   src: string;
 }
 export const Card = ({ x, index, title, src }: CardProps) => {
+  const navigate = useNavigate();
+  const openOnsitePayment = () => {
+    navigate("/pay/onsite");
+  };
+
   const input = [-SPACE * (index + 1), -SPACE * index, SPACE * (1 - index)];
   // const opacity = useTransform(x, input, [0.5, 1, 0.5]);
   const scale = useTransform(x, input, [0.83, 1, 0.83]);
@@ -125,6 +131,7 @@ export const Card = ({ x, index, title, src }: CardProps) => {
         background: url(${src}) no-repeat center;
         background-size: cover;
       `}
+      onClick={openOnsitePayment}
     >
       <CardTitle style={{ top: textTop, opacity: textOpacity }}>
         {title}

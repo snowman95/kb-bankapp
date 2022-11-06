@@ -9,7 +9,7 @@ const TITLE: { [key: string]: string } = {
   "/pay": "KB Pay",
   "/assetHome": "자산홈",
   "/aiService": "AI맞춤서비스",
-  "/chatbot": "챗봇/상담",
+  "/chatbot": "챗봇 / 상담",
 };
 
 const Header = () => {
@@ -20,8 +20,12 @@ const Header = () => {
   );
 
   const goBack = useCallback(() => {
-    navigate(-1);
-  }, [navigate]);
+    if (location.pathname === "/aiService") {
+      navigate("/assetHome");
+      return;
+    }
+    navigate("/home");
+  }, [location, navigate]);
   const goHome = useCallback(() => {
     navigate("/home");
   }, [navigate]);

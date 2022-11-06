@@ -22,6 +22,7 @@ export const CooperationContainer = styled.div`
 `;
 
 export const CooperationColBox = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10.66px;
@@ -39,4 +40,20 @@ export const Logo = styled.img`
 
 export const CooperationTitle = styled.span`
   font: ${typography.title01};
+`;
+
+export const BlurBox = styled.div`
+  z-index: 1;
+  position: absolute;
+  right: -22px;
+
+  background: linear-gradient(
+    270deg,
+    rgba(250, 250, 250) 0%,
+    rgba(255, 255, 255, 0) 88.89%
+  );
+  mix-blend-mode: normal;
+
+  width: 81px;
+  height: 400px;
 `;

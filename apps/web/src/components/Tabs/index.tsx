@@ -8,7 +8,6 @@ interface TabsProps {
 }
 export const Tabs = ({ id, size, current }: TabsProps) => {
   const array = Array.from({ length: size }, () => 0);
-  console.log("current", current);
   return (
     <LayoutGroup id={id}>
       <TabBox>

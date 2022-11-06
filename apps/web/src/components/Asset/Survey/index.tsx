@@ -57,6 +57,7 @@ export const Survey = ({ onCloseCallback }: SurveyProps) => {
           <SurveyContent>{q}</SurveyContent>
           <ButtonGroup>
             <YesButton
+              isActive={answer[index] === "yes"}
               onClick={() => {
                 submitAnswer(index, "yes");
               }}
@@ -64,6 +65,7 @@ export const Survey = ({ onCloseCallback }: SurveyProps) => {
               예
             </YesButton>
             <NoButton
+              isActive={answer[index] === "no"}
               onClick={() => {
                 submitAnswer(index, "no");
               }}
